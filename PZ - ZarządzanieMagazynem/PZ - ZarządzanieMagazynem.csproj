@@ -69,6 +69,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\AddClientViewModel.cs" />
+    <Compile Include="ViewModel\AddUserViewModel.cs" />
     <Compile Include="ViewModel\ExampleViewModel.cs" />
     <Compile Include="View\AddUserView.xaml.cs">
       <DependentUpon>AddUserView.xaml</DependentUpon>
