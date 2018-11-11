@@ -17,9 +17,9 @@ namespace PZ___ZarządzanieMagazynem.View
     /// <summary>
     /// Logika interakcji dla klasy Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class AddClientView : Window
     {
-        public Window1()
+        public AddClientView()
         {
             InitializeComponent();
         }

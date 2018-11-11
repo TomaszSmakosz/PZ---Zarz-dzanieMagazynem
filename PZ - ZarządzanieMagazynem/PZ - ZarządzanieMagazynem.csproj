@@ -35,11 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Core, Version=2.0.0.61292, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.2.0\lib\net40\Caliburn.Core.dll</HintPath>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
     </Reference>
-    <Reference Include="Caliburn.PresentationFramework, Version=2.0.0.61292, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.2.0\lib\net40\Caliburn.PresentationFramework.dll</HintPath>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -50,6 +53,11 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -68,6 +76,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Delivery.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Equipment.cs" />
+    <Compile Include="Model\Event.cs" />
+    <Compile Include="Model\EventHistory.cs" />
+    <Compile Include="Model\Inventory.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\Return.cs" />
+    <Compile Include="Model\Shipment.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\WarehouseContext.cs" />
     <Compile Include="ViewModel\AddClientViewModel.cs" />
     <Compile Include="ViewModel\AddUserViewModel.cs" />
     <Compile Include="ViewModel\ExampleViewModel.cs" />
@@ -137,7 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTO\" />
-    <Folder Include="Model\" />
     <Folder Include="Service\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
