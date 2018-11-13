@@ -92,7 +92,7 @@
     <Compile Include="ViewModel\AddClientViewModel.cs" />
     <Compile Include="ViewModel\AddEmployeeViewModel.cs" />
     <Compile Include="ViewModel\AddUserViewModel.cs" />
-    <Compile Include="ViewModel\AddInventoryView.cs" />
+    <Compile Include="ViewModel\AddInventoryViewModel.cs" />
     <Compile Include="ViewModel\ExampleViewModel.cs" />
     <Compile Include="View\AddEmployeeView.xaml.cs">
       <DependentUpon>AddEmployeeView.xaml</DependentUpon>

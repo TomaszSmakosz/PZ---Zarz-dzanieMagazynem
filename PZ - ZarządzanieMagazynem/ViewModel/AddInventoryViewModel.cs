@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PZ___ZarządzanieMagazynem.ViewModel
 {
-    public class AddInventoryView : Screen
+    public class AddInventoryViewModel : Screen
     {
     }
 }
