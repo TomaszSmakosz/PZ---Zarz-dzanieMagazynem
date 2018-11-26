@@ -111,6 +111,7 @@
     <Compile Include="ViewModel\AddShipmentViewModel.cs" />
     <Compile Include="ViewModel\AddUserViewModel.cs" />
     <Compile Include="ViewModel\AddInventoryViewModel.cs" />
+    <Compile Include="ViewModel\AddReturnViewModel.cs" />
     <Compile Include="ViewModel\ExampleViewModel.cs" />
     <Compile Include="View\AddDeliveryView.xaml.cs">
       <DependentUpon>AddDeliveryView.xaml</DependentUpon>
@@ -123,6 +124,9 @@
     </Compile>
     <Compile Include="View\AddInventoryView.xaml.cs">
       <DependentUpon>AddInventoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddReturnView.xaml.cs">
+      <DependentUpon>AddReturnView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\AddShipmentView.xaml.cs">
       <DependentUpon>AddShipmentView.xaml</DependentUpon>
@@ -161,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AddInventoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddReturnView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
