@@ -90,9 +90,13 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\WarehouseContext.cs" />
     <Compile Include="ViewModel\AddClientViewModel.cs" />
+    <Compile Include="ViewModel\AddEmployeeViewModel.cs" />
     <Compile Include="ViewModel\AddUserViewModel.cs" />
     <Compile Include="ViewModel\AddInventoryView.cs" />
     <Compile Include="ViewModel\ExampleViewModel.cs" />
+    <Compile Include="View\AddEmployeeView.xaml.cs">
+      <DependentUpon>AddEmployeeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AddInventoryView.xaml.cs">
       <DependentUpon>AddInventoryView.xaml</DependentUpon>
     </Compile>
@@ -117,6 +121,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AddEmployeeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AddInventoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
