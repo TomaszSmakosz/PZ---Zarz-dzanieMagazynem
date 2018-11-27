@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WarehouseSystem.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy AddEquipment.xaml
+    /// Logika interakcji dla klasy AddEquipmentView.xaml
     /// </summary>
-    public partial class AddEquipment : Window
+    public partial class AddEquipmentView : Window
     {
-        public AddEquipment()
+        public AddEquipmentView()
         {
             InitializeComponent();
         }
