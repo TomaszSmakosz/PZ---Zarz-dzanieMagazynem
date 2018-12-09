@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Caliburn.Micro;
-using WarehouseSystem.Model;
-using WarehouseSystem.ViewModel;
+using WarehouseSystem.Models;
+using WarehouseSystem.ViewModels;
 
 namespace WarehouseSystem
 {
