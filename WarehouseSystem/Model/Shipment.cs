@@ -14,7 +14,7 @@ namespace WarehouseSystem.Model
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = ("Name of the shipped item is required!"))]
         public string ShippedItem { get; set; }
 
         [Required]
