@@ -14,24 +14,24 @@ namespace WarehouseSystem.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = ("Name of the shipped item is required!"))]
+        [Required(ErrorMessage = ("Name of the shipped item is required."))]
         public string ShippedItem { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = ("Item quantity is required."))]
         public int ItemQuantity { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = ("Name of the recipient company is required."))]
         public string RecipientCompany { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = ("City/Town name is required."))]
         public string CityTown { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = ("Postal code is required."))]
         public int PostalCode { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = ("Street address is required."))]
         public string StreetAddress { get; set; }
 
-        public bool IsDisable { get; set; }
+        public bool IsDisabled { get; set; }
     }
 }

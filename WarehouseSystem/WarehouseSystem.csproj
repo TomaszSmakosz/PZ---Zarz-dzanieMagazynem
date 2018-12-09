@@ -93,8 +93,7 @@
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="DTO\ClientDTO.cs" />
-    <Compile Include="DTO\EquipmentDTO.cs" />
-    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="DTO\ShipmentDTO.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Delivery.cs" />
@@ -109,8 +108,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\WarehouseContext.cs" />
     <Compile Include="Service\ClientService.cs" />
-    <Compile Include="Service\EquipmentService.cs" />
-    <Compile Include="Service\UserService.cs" />
+    <Compile Include="Service\ShipmentService.cs" />
     <Compile Include="ViewModels\AddClientViewModel.cs" />
     <Compile Include="ViewModels\AddDeliveryViewModel.cs" />
     <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
