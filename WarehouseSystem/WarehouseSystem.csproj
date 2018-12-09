@@ -92,55 +92,58 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\Delivery.cs" />
-    <Compile Include="Model\Employee.cs" />
-    <Compile Include="Model\Equipment.cs" />
-    <Compile Include="Model\Event.cs" />
-    <Compile Include="Model\EventHistory.cs" />
-    <Compile Include="Model\Inventory.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\Return.cs" />
-    <Compile Include="Model\Shipment.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="Model\WarehouseContext.cs" />
-    <Compile Include="ViewModel\AddClientViewModel.cs" />
-    <Compile Include="ViewModel\AddDeliveryViewModel.cs" />
-    <Compile Include="ViewModel\AddEmployeeViewModel.cs" />
-    <Compile Include="ViewModel\AddEquipmentViewModel.cs" />
-    <Compile Include="ViewModel\AddShipmentViewModel.cs" />
-    <Compile Include="ViewModel\AddUserViewModel.cs" />
-    <Compile Include="ViewModel\AddInventoryViewModel.cs" />
-    <Compile Include="ViewModel\AddReturnViewModel.cs" />
-    <Compile Include="ViewModel\ExampleViewModel.cs" />
-    <Compile Include="View\AddDeliveryView.xaml.cs">
+    <Compile Include="DTO\ClientDTO.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Delivery.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Equipment.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventHistory.cs" />
+    <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Return.cs" />
+    <Compile Include="Models\Shipment.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\WarehouseContext.cs" />
+    <Compile Include="Service\ClientService.cs" />
+    <Compile Include="ViewModels\AddClientViewModel.cs" />
+    <Compile Include="ViewModels\AddDeliveryViewModel.cs" />
+    <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
+    <Compile Include="ViewModels\AddEquipmentViewModel.cs" />
+    <Compile Include="ViewModels\AddShipmentViewModel.cs" />
+    <Compile Include="ViewModels\AddUserViewModel.cs" />
+    <Compile Include="ViewModels\AddInventoryViewModel.cs" />
+    <Compile Include="ViewModels\AddReturnViewModel.cs" />
+    <Compile Include="ViewModels\ExampleViewModel.cs" />
+    <Compile Include="Views\AddDeliveryView.xaml.cs">
       <DependentUpon>AddDeliveryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddEmployeeView.xaml.cs">
+    <Compile Include="Views\AddEmployeeView.xaml.cs">
       <DependentUpon>AddEmployeeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddEquipmentView.xaml.cs">
+    <Compile Include="Views\AddEquipmentView.xaml.cs">
       <DependentUpon>AddEquipmentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddInventoryView.xaml.cs">
+    <Compile Include="Views\AddInventoryView.xaml.cs">
       <DependentUpon>AddInventoryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddReturnView.xaml.cs">
+    <Compile Include="Views\AddReturnView.xaml.cs">
       <DependentUpon>AddReturnView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddShipmentView.xaml.cs">
+    <Compile Include="Views\AddShipmentView.xaml.cs">
       <DependentUpon>AddShipmentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddUserView.xaml.cs">
+    <Compile Include="Views\AddUserView.xaml.cs">
       <DependentUpon>AddUserView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ExampleView.xaml.cs">
+    <Compile Include="Views\ExampleView.xaml.cs">
       <DependentUpon>ExampleView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddClientView.xaml.cs">
+    <Compile Include="Views\AddClientView.xaml.cs">
       <DependentUpon>AddClientView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddOrdersView.xaml.cs">
+    <Compile Include="Views\AddOrdersView.xaml.cs">
       <DependentUpon>AddOrdersView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -155,43 +158,43 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\AddDeliveryView.xaml">
+    <Page Include="Views\AddDeliveryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddEmployeeView.xaml">
+    <Page Include="Views\AddEmployeeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddEquipmentView.xaml">
+    <Page Include="Views\AddEquipmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddInventoryView.xaml">
+    <Page Include="Views\AddInventoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddReturnView.xaml">
+    <Page Include="Views\AddReturnView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddShipmentView.xaml">
+    <Page Include="Views\AddShipmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddUserView.xaml">
+    <Page Include="Views\AddUserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ExampleView.xaml">
+    <Page Include="Views\ExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddClientView.xaml">
+    <Page Include="Views\AddClientView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddOrdersView.xaml">
+    <Page Include="Views\AddOrdersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,15 +224,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Documents\WstępnySzkieletBazyDanych.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-    <Folder Include="Service\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
