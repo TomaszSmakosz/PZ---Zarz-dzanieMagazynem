@@ -94,6 +94,7 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="DTO\ClientDTO.cs" />
     <Compile Include="DTO\DeliveryDTO.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
     <Compile Include="DTO\ReturnDTO.cs" />
     <Compile Include="DTO\ShipmentDTO.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="Models\WarehouseContext.cs" />
     <Compile Include="Service\ClientService.cs" />
     <Compile Include="Service\DeliveryService.cs" />
+    <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\InventoryService.cs" />
     <Compile Include="Service\ReturnService.cs" />
     <Compile Include="Service\ShipmentService.cs" />
