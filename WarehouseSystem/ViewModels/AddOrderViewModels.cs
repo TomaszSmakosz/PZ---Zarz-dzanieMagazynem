@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WarehouseSystem.ViewModels
 {
-    internal class AddOrderViewModels : Screen
+    public class AddOrderViewModels : Screen
     {
     }
 }

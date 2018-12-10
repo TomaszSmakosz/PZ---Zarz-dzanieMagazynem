@@ -10,70 +10,61 @@ using WarehouseSystem.Models;
 
 namespace WarehouseSystem.Service
 {
-    public class UserService
+    public class EventHistoryService
     {
-        public static List<UserDTO> GetAll()
+        public static List<EventHistoryDTO> GetAll()
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var result = db.Users.Where(x => x.IsDisabled == false).Select(
-                                   x => new UserDTO
+                var result = db.EventHistories.Where(x => x.IsDisabled == false).Select(
+                                   x => new EventHistoryDTO
                                    {
                                        Id = x.Id,
-                                       FirstName = x.FirstName,
-                                       LastName = x.LastName,
-                                       Email = x.Email,
-                                       PhoneNumber = x.PhoneNumber,
-                                       BirthDate = x.BirthDate,
+                                       EventId = x.EventId,
+                                       StartDate = x.StartDate,
                                    }).ToList();
                 return result;
             }
         }
 
-        public static BindableCollection<UserDTO> GetAllBindableCollection()
+        public static BindableCollection<EventHistoryDTO> GetAllBindableCollection()
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var result = new BindableCollection<UserDTO>(GetAll());
+                var result = new BindableCollection<EventHistoryDTO>(GetAll());
                 return result;
             }
         }
 
-        public static UserDTO GetById(int id)
+        public static EventHistoryDTO GetById(int id)
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var result = db.Users.Where(x => x.Id == id).Select(
-                                    x => new UserDTO
+                var result = db.EventHistories.Where(x => x.Id == id).Select(
+                                    x => new EventHistoryDTO
                                     {
                                         Id = x.Id,
-                                        FirstName = x.FirstName,
-                                        LastName = x.LastName,
-                                        Email = x.Email,
-                                        PhoneNumber = x.PhoneNumber,
-                                        BirthDate = x.BirthDate,
+                                        EventId = x.EventId,
+                                        StartDate = x.StartDate,
                                     }).FirstOrDefault();
 
                 return result;
             }
         }
 
-        public static string Add(UserDTO user)
+        public static string Add(EventHistoryDTO eventHistory)
         {
             using (WarehouseContext db = new WarehouseContext())
             {
                 string error = null;
-                User newUser = new User();
-                newUser.Id = user.Id;
-                newUser.FirstName = user.FirstName;
-                newUser.LastName = user.LastName;
-                newUser.Email = user.Email;
-                newUser.PhoneNumber = user.PhoneNumber;
-                newUser.BirthDate = user.BirthDate;
+                EventHistory newEventHistory = new EventHistory();
+                newEventHistory.Id = eventHistory.Id;
+                newEventHistory.EventId = eventHistory.EventId;
+                newEventHistory.StartDate = eventHistory.StartDate;
 
-                var context = new ValidationContext(newUser, null, null);
+                var context = new ValidationContext(newEventHistory, null, null);
                 var result = new List<ValidationResult>();
-                Validator.TryValidateObject(newUser, context, result, true);
+                Validator.TryValidateObject(newEventHistory, context, result, true);
 
                 foreach (var x in result)
                 {
@@ -82,27 +73,24 @@ namespace WarehouseSystem.Service
 
                 if (error == null)
                 {
-                    db.Users.Add(newUser);
+                    db.EventHistories.Add(newEventHistory);
                     db.SaveChanges();
                 }
                 return error;
             }
         }
 
-        public static string Edit(UserDTO user)
+        public static string Edit(EventHistoryDTO eventHistory)
         {
             using (WarehouseContext db = new WarehouseContext())
             {
                 string error = null;
 
-                var toModify = db.Users.Where(x => x.Id == user.Id).FirstOrDefault();
+                var toModify = db.EventHistories.Where(x => x.Id == eventHistory.Id).FirstOrDefault();
 
-                toModify.Id = user.Id;
-                toModify.FirstName = user.FirstName;
-                toModify.LastName = user.LastName;
-                toModify.Email = user.Email;
-                toModify.PhoneNumber = user.PhoneNumber;
-                toModify.BirthDate = user.BirthDate;
+                toModify.Id = eventHistory.Id;
+                toModify.EventId = eventHistory.EventId;
+                toModify.StartDate = eventHistory.StartDate;
 
                 var context = new ValidationContext(toModify, null, null);
                 var result = new List<ValidationResult>();
@@ -121,11 +109,11 @@ namespace WarehouseSystem.Service
             }
         }
 
-        public static void Delete(UserDTO user)
+        public static void Delete(EventHistoryDTO eventHistory)
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var toDelete = db.Users.Where(x => x.Id == user.Id).FirstOrDefault();
+                var toDelete = db.EventHistories.Where(x => x.Id == eventHistory.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;
 
                 db.SaveChanges();
