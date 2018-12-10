@@ -16,7 +16,7 @@ namespace WarehouseSystem.Service
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var result = db.EventHistories.Where(x => x.IsDisabled == false).Select(
+                var result = db.EventHistory.Where(x => x.IsDisabled == false).Select(
                                    x => new EventHistoryDTO
                                    {
                                        Id = x.Id,
@@ -40,7 +40,7 @@ namespace WarehouseSystem.Service
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var result = db.EventHistories.Where(x => x.Id == id).Select(
+                var result = db.EventHistory.Where(x => x.Id == id).Select(
                                     x => new EventHistoryDTO
                                     {
                                         Id = x.Id,
@@ -73,7 +73,7 @@ namespace WarehouseSystem.Service
 
                 if (error == null)
                 {
-                    db.EventHistories.Add(newEventHistory);
+                    db.EventHistory.Add(newEventHistory);
                     db.SaveChanges();
                 }
                 return error;
@@ -86,7 +86,7 @@ namespace WarehouseSystem.Service
             {
                 string error = null;
 
-                var toModify = db.EventHistories.Where(x => x.Id == eventHistory.Id).FirstOrDefault();
+                var toModify = db.EventHistory.Where(x => x.Id == eventHistory.Id).FirstOrDefault();
 
                 toModify.Id = eventHistory.Id;
                 toModify.EventId = eventHistory.EventId;
@@ -113,7 +113,7 @@ namespace WarehouseSystem.Service
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var toDelete = db.EventHistories.Where(x => x.Id == eventHistory.Id).FirstOrDefault();
+                var toDelete = db.EventHistory.Where(x => x.Id == eventHistory.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;
 
                 db.SaveChanges();

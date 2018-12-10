@@ -56,28 +56,27 @@ namespace WarehouseSystem.Service
             }
         }
 
-        public static string Add(EventDTO private event)
-
+        public static string Add(EventDTO eventDTO)
         {
             using (WarehouseContext db = new WarehouseContext())
             {
                 string error = null;
                 Event newEvent = new Event();
 
-                newEvent.Id = event.Id;
+                newEvent.Id = eventDTO.Id;
 
-        newEvent.Name = event.Name;
+                newEvent.Name = eventDTO.Name;
 
-        newEvent.Description = event.Description;
+                newEvent.Description = eventDTO.Description;
 
-        newEvent.Executed = event.Executed;
+                newEvent.Executed = eventDTO.Executed;
 
-        newEvent.UserId = event.UserId;
+                newEvent.UserId = eventDTO.UserId;
 
-        var context = private new ValidationContext(newEvent, null, null);
+                var context = new ValidationContext(newEvent, null, null);
 
-        private var result = new List<ValidationResult>();
-        Validator.TryValidateObject(newEvent, context, result, true);
+                var result = new List<ValidationResult>();
+                Validator.TryValidateObject(newEvent, context, result, true);
 
                 foreach (var x in result)
                 {
@@ -94,46 +93,46 @@ namespace WarehouseSystem.Service
             }
         }
 
-        public static string Edit(EventDTO event)
-{
-    using (WarehouseContext db = new WarehouseContext())
-    {
-        string error = null;
-
-        var toModify = db.Events.Where(x => x.Id == event.Id).FirstOrDefault();
-
-        toModify.Id = event.Id;
-        toModify.Name = event.Name;
-        toModify.Description = event.Description;
-        toModify.Executed = event.Executed;
-        toModify.UserId = event.UserId;
-
-        var context = new ValidationContext(toModify, null, null);
-        var result = new List<ValidationResult>();
-        Validator.TryValidateObject(toModify, context, result, true);
-
-        foreach (var x in result)
+        public static string Edit(EventDTO eventDTO)
         {
-            error = error + x.ErrorMessage + "\n";
+            using (WarehouseContext db = new WarehouseContext())
+            {
+                string error = null;
+
+                var toModify = db.Events.Where(x => x.Id == eventDTO.Id).FirstOrDefault();
+
+                toModify.Id = eventDTO.Id;
+                toModify.Name = eventDTO.Name;
+                toModify.Description = eventDTO.Description;
+                toModify.Executed = eventDTO.Executed;
+                toModify.UserId = eventDTO.UserId;
+
+                var context = new ValidationContext(toModify, null, null);
+                var result = new List<ValidationResult>();
+                Validator.TryValidateObject(toModify, context, result, true);
+
+                foreach (var x in result)
+                {
+                    error = error + x.ErrorMessage + "\n";
+                }
+
+                if (error == null)
+                {
+                    db.SaveChanges();
+                }
+                return error;
+            }
         }
 
-        if (error == null)
+        public static void Delete(EventDTO eventDTO)
         {
-            db.SaveChanges();
+            using (WarehouseContext db = new WarehouseContext())
+            {
+                var toDelete = db.Events.Where(x => x.Id == eventDTO.Id).FirstOrDefault();
+                toDelete.IsDisabled = true;
+
+                db.SaveChanges();
+            }
         }
-        return error;
-    }
-}
-
-public static void Delete(EventDTO event)
-{
-    using (WarehouseContext db = new WarehouseContext())
-    {
-        var toDelete = db.Events.Where(x => x.Id == event.Id).FirstOrDefault();
-        toDelete.IsDisabled = true;
-
-        db.SaveChanges();
-    }
-}
     }
 }

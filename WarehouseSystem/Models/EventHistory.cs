@@ -19,5 +19,7 @@ namespace WarehouseSystem.Models
 
         [Required(ErrorMessage = ("Start date is required."))]
         public DateTime StartDate { get; set; }
+
+        public bool IsDisabled { get; set; }
     }
 }
