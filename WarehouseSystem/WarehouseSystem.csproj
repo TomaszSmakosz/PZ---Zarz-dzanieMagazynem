@@ -93,8 +93,14 @@
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="DTO\ClientDTO.cs" />
+    <Compile Include="DTO\DeliveryDTO.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\InventoryDTO.cs" />
+    <Compile Include="DTO\OrderDTO.cs" />
     <Compile Include="DTO\ReturnDTO.cs" />
     <Compile Include="DTO\ShipmentDTO.cs" />
+    <Compile Include="DTO\EquipmentDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Delivery.cs" />
@@ -109,12 +115,19 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\WarehouseContext.cs" />
     <Compile Include="Service\ClientService.cs" />
+    <Compile Include="Service\DeliveryService.cs" />
+    <Compile Include="Service\EmployeeService.cs" />
+    <Compile Include="Service\InventoryService.cs" />
+    <Compile Include="Service\OrderService.cs" />
     <Compile Include="Service\ReturnService.cs" />
     <Compile Include="Service\ShipmentService.cs" />
+    <Compile Include="Service\EquipmentService.cs" />
+    <Compile Include="Service\UserService.cs" />
     <Compile Include="ViewModels\AddClientViewModel.cs" />
     <Compile Include="ViewModels\AddDeliveryViewModel.cs" />
     <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
     <Compile Include="ViewModels\AddEquipmentViewModel.cs" />
+    <Compile Include="ViewModels\AddOrderViewModels.cs" />
     <Compile Include="ViewModels\AddShipmentViewModel.cs" />
     <Compile Include="ViewModels\AddUserViewModel.cs" />
     <Compile Include="ViewModels\AddInventoryViewModel.cs" />
