@@ -32,6 +32,12 @@ namespace WarehouseSystem.Models
         [Required(ErrorMessage = ("Street address is required."))]
         public string StreetAddress { get; set; }
 
+        [Required(ErrorMessage = ("Weight is required."))]
+        public decimal Weight { get; set; }
+
+        [Required(ErrorMessage = ("Description is required."))]
+        public string Description { get; set; }
+
         public bool IsDisabled { get; set; }
     }
 }

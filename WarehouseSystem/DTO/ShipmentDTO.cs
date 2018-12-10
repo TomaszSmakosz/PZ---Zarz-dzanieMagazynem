@@ -15,6 +15,8 @@ namespace WarehouseSystem.DTO
         public string CityTown { get; set; }
         public int PostalCode { get; set; }
         public string StreetAddress { get; set; }
+        public decimal Weight { get; set; }
+        public string Description { get; set; }
 
         public bool IsDisabled { get; set; }
     }
