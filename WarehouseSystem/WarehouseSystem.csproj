@@ -96,6 +96,7 @@
     <Compile Include="DTO\DeliveryDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
+    <Compile Include="DTO\OrderDTO.cs" />
     <Compile Include="DTO\ReturnDTO.cs" />
     <Compile Include="DTO\ShipmentDTO.cs" />
     <Compile Include="DTO\EquipmentDTO.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Service\DeliveryService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
     <Compile Include="Service\InventoryService.cs" />
+    <Compile Include="Service\OrderService.cs" />
     <Compile Include="Service\ReturnService.cs" />
     <Compile Include="Service\ShipmentService.cs" />
     <Compile Include="Service\EquipmentService.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="ViewModels\AddDeliveryViewModel.cs" />
     <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
     <Compile Include="ViewModels\AddEquipmentViewModel.cs" />
+    <Compile Include="ViewModels\AddOrderViewModels.cs" />
     <Compile Include="ViewModels\AddShipmentViewModel.cs" />
     <Compile Include="ViewModels\AddUserViewModel.cs" />
     <Compile Include="ViewModels\AddInventoryViewModel.cs" />
