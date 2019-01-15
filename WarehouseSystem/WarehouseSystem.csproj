@@ -103,6 +103,10 @@
     <Compile Include="DTO\ShipmentDTO.cs" />
     <Compile Include="DTO\EquipmentDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Migrations\201901151417575_NewMigration.cs" />
+    <Compile Include="Migrations\201901151417575_NewMigration.Designer.cs">
+      <DependentUpon>201901151417575_NewMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Delivery.cs" />
@@ -234,6 +238,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201901151417575_NewMigration.resx">
+      <DependentUpon>201901151417575_NewMigration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
