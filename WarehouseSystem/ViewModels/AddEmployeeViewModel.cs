@@ -26,6 +26,10 @@ namespace WarehouseSystem.ViewModels
 
         public bool IsDisabled { get; set; }
 
+        public AddEmployeeViewModel()
+        {
+        }
+
         public void Add()
         {
             var newEmployee = new EmployeeDTO();
@@ -36,6 +40,7 @@ namespace WarehouseSystem.ViewModels
             newEmployee.PhoneNumber = PhoneNumber;
             newEmployee.Workplace = Workplace;
             EmployeeService.Add(newEmployee);
+            TryClose();
         }
 
         public void Cancel()
