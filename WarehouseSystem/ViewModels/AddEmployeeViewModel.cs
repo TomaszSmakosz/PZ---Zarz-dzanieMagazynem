@@ -43,7 +43,7 @@ namespace WarehouseSystem.ViewModels
             TryClose();
         }
 
-        public void Cancel()
+        public void Close()
         {
             TryClose();
         }

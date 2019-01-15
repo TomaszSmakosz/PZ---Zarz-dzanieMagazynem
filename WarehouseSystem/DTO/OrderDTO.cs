@@ -13,8 +13,11 @@ namespace WarehouseSystem.DTO
         public int ItemQuantity { get; set; }
         public string RecipientCompany { get; set; }
         public string CityTown { get; set; }
-        public int PostalCode { get; set; }
+        public int PostalCode1 { get; set; }
+        public int PostalCode2 { get; set; }
         public string StreetAddress { get; set; }
+        public float Weight { get; set; }
+        public string Description { get; set; }
 
         public bool IsDisabled { get; set; }
     }
