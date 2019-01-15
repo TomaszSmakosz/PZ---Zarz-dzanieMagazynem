@@ -95,12 +95,18 @@
     <Compile Include="DTO\ClientDTO.cs" />
     <Compile Include="DTO\DeliveryDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\EventDTO.cs" />
+    <Compile Include="DTO\EventHistoryDTO.cs" />
     <Compile Include="DTO\InventoryDTO.cs" />
     <Compile Include="DTO\OrderDTO.cs" />
     <Compile Include="DTO\ReturnDTO.cs" />
     <Compile Include="DTO\ShipmentDTO.cs" />
     <Compile Include="DTO\EquipmentDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Migrations\201901151417575_NewMigration.cs" />
+    <Compile Include="Migrations\201901151417575_NewMigration.Designer.cs">
+      <DependentUpon>201901151417575_NewMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Delivery.cs" />
@@ -117,6 +123,8 @@
     <Compile Include="Service\ClientService.cs" />
     <Compile Include="Service\DeliveryService.cs" />
     <Compile Include="Service\EmployeeService.cs" />
+    <Compile Include="Service\EventHistoryService.cs" />
+    <Compile Include="Service\EventService.cs" />
     <Compile Include="Service\InventoryService.cs" />
     <Compile Include="Service\OrderService.cs" />
     <Compile Include="Service\ReturnService.cs" />
@@ -230,6 +238,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201901151417575_NewMigration.resx">
+      <DependentUpon>201901151417575_NewMigration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

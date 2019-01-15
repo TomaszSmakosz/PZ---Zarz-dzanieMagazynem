@@ -10,67 +10,73 @@ using WarehouseSystem.Models;
 
 namespace WarehouseSystem.Service
 {
-    public class UserService
+    public class EventService
     {
-        public static List<UserDTO> GetAll()
+        public static List<EventDTO> GetAll()
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var result = db.Users.Where(x => x.IsDisabled == false).Select(
-                                   x => new UserDTO
+                var result = db.Events.Where(x => x.IsDisabled == false).Select(
+                                   x => new EventDTO
                                    {
-                                       FirstName = x.FirstName,
-                                       LastName = x.LastName,
-                                       Email = x.Email,
-                                       PhoneNumber = x.PhoneNumber,
-                                       BirthDate = x.BirthDate,
+                                       Id = x.Id,
+                                       Name = x.Name,
+                                       Description = x.Description,
+                                       Executed = x.Executed,
+                                       UserId = x.UserId,
                                    }).ToList();
                 return result;
             }
         }
 
-        public static BindableCollection<UserDTO> GetAllBindableCollection()
+        public static BindableCollection<EventDTO> GetAllBindableCollection()
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var result = new BindableCollection<UserDTO>(GetAll());
+                var result = new BindableCollection<EventDTO>(GetAll());
                 return result;
             }
         }
 
-        public static UserDTO GetById(int id)
+        public static EventDTO GetById(int id)
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var result = db.Users.Where(x => x.Id == id).Select(
-                                    x => new UserDTO
+                var result = db.Events.Where(x => x.Id == id).Select(
+                                    x => new EventDTO
                                     {
-                                        FirstName = x.FirstName,
-                                        LastName = x.LastName,
-                                        Email = x.Email,
-                                        PhoneNumber = x.PhoneNumber,
-                                        BirthDate = x.BirthDate,
+                                        Id = x.Id,
+                                        Name = x.Name,
+                                        Description = x.Description,
+                                        Executed = x.Executed,
+                                        UserId = x.UserId,
                                     }).FirstOrDefault();
 
                 return result;
             }
         }
 
-        public static string Add(UserDTO user)
+        public static string Add(EventDTO eventDTO)
         {
             using (WarehouseContext db = new WarehouseContext())
             {
                 string error = null;
-                User newUser = new User();
-                newUser.FirstName = user.FirstName;
-                newUser.LastName = user.LastName;
-                newUser.Email = user.Email;
-                newUser.PhoneNumber = user.PhoneNumber;
-                newUser.BirthDate = user.BirthDate;
+                Event newEvent = new Event();
 
-                var context = new ValidationContext(newUser, null, null);
+                newEvent.Id = eventDTO.Id;
+
+                newEvent.Name = eventDTO.Name;
+
+                newEvent.Description = eventDTO.Description;
+
+                newEvent.Executed = eventDTO.Executed;
+
+                newEvent.UserId = eventDTO.UserId;
+
+                var context = new ValidationContext(newEvent, null, null);
+
                 var result = new List<ValidationResult>();
-                Validator.TryValidateObject(newUser, context, result, true);
+                Validator.TryValidateObject(newEvent, context, result, true);
 
                 foreach (var x in result)
                 {
@@ -79,26 +85,27 @@ namespace WarehouseSystem.Service
 
                 if (error == null)
                 {
-                    db.Users.Add(newUser);
+                    db.Events.Add(newEvent);
                     db.SaveChanges();
                 }
+
                 return error;
             }
         }
 
-        public static string Edit(UserDTO user)
+        public static string Edit(EventDTO eventDTO)
         {
             using (WarehouseContext db = new WarehouseContext())
             {
                 string error = null;
 
-                var toModify = db.Users.Where(x => x.Id == user.Id).FirstOrDefault();
+                var toModify = db.Events.Where(x => x.Id == eventDTO.Id).FirstOrDefault();
 
-                toModify.FirstName = user.FirstName;
-                toModify.LastName = user.LastName;
-                toModify.Email = user.Email;
-                toModify.PhoneNumber = user.PhoneNumber;
-                toModify.BirthDate = user.BirthDate;
+                toModify.Id = eventDTO.Id;
+                toModify.Name = eventDTO.Name;
+                toModify.Description = eventDTO.Description;
+                toModify.Executed = eventDTO.Executed;
+                toModify.UserId = eventDTO.UserId;
 
                 var context = new ValidationContext(toModify, null, null);
                 var result = new List<ValidationResult>();
@@ -117,11 +124,11 @@ namespace WarehouseSystem.Service
             }
         }
 
-        public static void Delete(UserDTO user)
+        public static void Delete(EventDTO eventDTO)
         {
             using (WarehouseContext db = new WarehouseContext())
             {
-                var toDelete = db.Users.Where(x => x.Id == user.Id).FirstOrDefault();
+                var toDelete = db.Events.Where(x => x.Id == eventDTO.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;
 
                 db.SaveChanges();
