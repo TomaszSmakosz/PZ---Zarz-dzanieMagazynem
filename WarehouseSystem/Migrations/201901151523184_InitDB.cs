@@ -3,7 +3,7 @@ namespace ArmyBase.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class NewMigration : DbMigration
+    public partial class InitDB : DbMigration
     {
         public override void Up()
         {
@@ -30,7 +30,7 @@ namespace ArmyBase.Migrations
                         ItemQuantity = c.Int(nullable: false),
                         RecipientCompany = c.String(nullable: false),
                         CityTown = c.String(nullable: false),
-                        PostalCode = c.Int(nullable: false),
+                        PostalCode = c.String(nullable: false),
                         StreetAddress = c.String(nullable: false),
                         Weight = c.Int(nullable: false),
                         Description = c.String(nullable: false),
@@ -116,7 +116,7 @@ namespace ArmyBase.Migrations
                         ItemQuantity = c.Int(nullable: false),
                         RecipientCompany = c.String(nullable: false),
                         CityTown = c.String(nullable: false),
-                        PostalCode = c.Int(nullable: false),
+                        PostalCode = c.String(nullable: false),
                         StreetAddress = c.String(nullable: false),
                         IsDisabled = c.Boolean(nullable: false),
                     })
@@ -144,7 +144,7 @@ namespace ArmyBase.Migrations
                         ItemQuantity = c.Int(nullable: false),
                         RecipientCompany = c.String(nullable: false),
                         CityTown = c.String(nullable: false),
-                        PostalCode = c.Int(nullable: false),
+                        PostalCode = c.String(nullable: false),
                         StreetAddress = c.String(nullable: false),
                         Weight = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Description = c.String(nullable: false),

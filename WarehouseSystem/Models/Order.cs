@@ -27,7 +27,7 @@ namespace WarehouseSystem.Models
         public string CityTown { get; set; }
 
         [Required(ErrorMessage = ("Postal code is required."))]
-        public int PostalCode { get; set; }
+        public string PostalCode { get; set; }
 
         [Required(ErrorMessage = ("Street address is required."))]
         public string StreetAddress { get; set; }

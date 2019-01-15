@@ -19,9 +19,9 @@ namespace WarehouseSystem.ViewModels
 
         public string CityTown { get; set; }
 
-        public int PostalCode1 { get; set; }
+        public string PostalCode1 { get; set; }
 
-        public int PostalCode2 { get; set; }
+        public string PostalCode2 { get; set; }
 
         public string StreetAddress { get; set; }
 
@@ -40,8 +40,7 @@ namespace WarehouseSystem.ViewModels
             newOrder.ItemQuantity = ItemQuantity;
             newOrder.RecipientCompany = RecipientCompany;
             newOrder.CityTown = CityTown;
-            newOrder.PostalCode1 = PostalCode1;
-            newOrder.PostalCode2 = PostalCode2;
+            newOrder.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
             newOrder.StreetAddress = StreetAddress;
             newOrder.Weight = Weight;
             newOrder.Description = Description;
