@@ -14,6 +14,10 @@ namespace WarehouseSystem.ViewModels
     //ViewModel do widoku AddClientView
     public class AddClientViewModel : Screen
     {
+        private bool IsEdit { get; set; }
+
+        private ClientDTO toEdit { get; set; }
+
         public string CompanyName { get; set; }
         public string PostalCode1 { get; set; }
         public string PostalCode2 { get; set; }
@@ -21,8 +25,32 @@ namespace WarehouseSystem.ViewModels
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
+        public string ButtonLabel { get; set; }
+
+        public AddClientViewModel(ClientDTO client)
+        {
+            IsEdit = true;
+            ButtonLabel = "Edit";
+
+            this.toEdit = client;
+            CompanyName = client.CompanyName;
+            PostalCode1 = client.PostalCode.Substring(0, 2);
+            PostalCode2 = client.PostalCode.Substring(3, 6);
+            Address = client.Address;
+            Email = client.Email;
+            PhoneNumber = client.PhoneNumber;
+            NotifyOfPropertyChange(() => CompanyName);
+            NotifyOfPropertyChange(() => PostalCode1);
+            NotifyOfPropertyChange(() => PostalCode2);
+            NotifyOfPropertyChange(() => Address);
+            NotifyOfPropertyChange(() => Email);
+            NotifyOfPropertyChange(() => PhoneNumber);
+        }
+
         public AddClientViewModel()
         {
+            IsEdit = false;
+            ButtonLabel = "Add";
         }
 
         public void Add()
