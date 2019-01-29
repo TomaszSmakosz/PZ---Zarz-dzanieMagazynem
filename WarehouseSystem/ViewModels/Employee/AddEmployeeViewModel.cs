@@ -12,6 +12,10 @@ namespace WarehouseSystem.ViewModels
 {
     public class AddEmployeeViewModel : Screen
     {
+        private bool IsEdit { get; set; }
+
+        private EmployeeDTO ToEdit { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -26,8 +30,32 @@ namespace WarehouseSystem.ViewModels
 
         public bool IsDisabled { get; set; }
 
+        public string ButtonLabel { get; set; }
+
+        public AddEmployeeViewModel(EmployeeDTO employee)
+        {
+            IsEdit = true;
+            ButtonLabel = "Edit";
+
+            this.ToEdit = employee;
+            FirstName = employee.FirstName;
+            LastName = employee.LastName;
+            EmploymentDate = employee.EmploymentDate;
+            Email = employee.Email;
+            PhoneNumber = employee.PhoneNumber;
+            Workplace = employee.Workplace;
+            NotifyOfPropertyChange(() => FirstName);
+            NotifyOfPropertyChange(() => LastName);
+            NotifyOfPropertyChange(() => EmploymentDate);
+            NotifyOfPropertyChange(() => Email);
+            NotifyOfPropertyChange(() => PhoneNumber);
+            NotifyOfPropertyChange(() => Workplace);
+        }
+
         public AddEmployeeViewModel()
         {
+            IsEdit = false;
+            ButtonLabel = "Add";
         }
 
         public void Add()

@@ -158,8 +158,14 @@
     <Compile Include="Views\Employee\AddEmployeeView.xaml.cs">
       <DependentUpon>AddEmployeeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Employee\EmployeeGridView.xaml.cs">
+      <DependentUpon>EmployeeGridView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Equipment\AddEquipmentView.xaml.cs">
       <DependentUpon>AddEquipmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Equipment\EquipmentGridView.xaml.cs">
+      <DependentUpon>EquipmentGridView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Inventory\AddInventoryView.xaml.cs">
       <DependentUpon>AddInventoryView.xaml</DependentUpon>
@@ -206,7 +212,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Employee\EmployeeGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Equipment\AddEquipmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Equipment\EquipmentGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

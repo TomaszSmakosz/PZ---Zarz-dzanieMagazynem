@@ -11,6 +11,10 @@ namespace WarehouseSystem.ViewModels
 {
     public class AddEquipmentViewModel : Screen
     {
+        private bool IsEdit { get; set; }
+
+        private EquipmentDTO ToEdit { get; set; }
+
         public string Type { get; set; }
 
         public string Mark { get; set; }
@@ -20,9 +24,29 @@ namespace WarehouseSystem.ViewModels
         public DateTime AddDate { get; set; } = DateTime.Now;
 
         public string Status { get; set; }
+        public string ButtonLabel { get; set; }
+
+        public AddEquipmentViewModel(EquipmentDTO equipment)
+        {
+            IsEdit = true;
+            ButtonLabel = "Edit";
+            this.ToEdit = equipment;
+            Type = equipment.Type;
+            Mark = equipment.Mark;
+            Model = equipment.Model;
+            AddDate = equipment.AddDate;
+            Status = equipment.Status;
+            NotifyOfPropertyChange(() => Type);
+            NotifyOfPropertyChange(() => Mark);
+            NotifyOfPropertyChange(() => Model);
+            NotifyOfPropertyChange(() => AddDate);
+            NotifyOfPropertyChange(() => Status);
+        }
 
         public AddEquipmentViewModel()
         {
+            IsEdit = false;
+            ButtonLabel = "Add";
         }
 
         public void Add()
