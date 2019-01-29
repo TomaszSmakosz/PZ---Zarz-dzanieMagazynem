@@ -12,6 +12,8 @@ namespace WarehouseSystem.ViewModels
     //ViewModel do widoku AddShipment
     public class AddShipmentViewModel : Screen
     {
+        private bool IsEdit { get; set; }
+        private ShipmentDTO toEdit { get; set; }
         public string ShippedItem { get; set; }
         public int ItemQuantity { get; set; }
         public string RecipientCompany { get; set; }
@@ -21,6 +23,38 @@ namespace WarehouseSystem.ViewModels
         public string StreetAddress { get; set; }
         public decimal Weight { get; set; }
         public string Description { get; set; }
+        public string ButtonLabel { get; set; }
+
+        public AddShipmentViewModel(ShipmentDTO shipment)
+        {
+            IsEdit = true;
+            ButtonLabel = "Edit";
+            this.toEdit = shipment;
+            ShippedItem = shipment.ShippedItem;
+            ItemQuantity = shipment.ItemQuantity;
+            RecipientCompany = shipment.RecipientCompany;
+            CityTown = shipment.CityTown;
+            PostalCode1 = shipment.PostalCode.Substring(0, 2);
+            PostalCode2 = shipment.PostalCode.Substring(3, 6);
+            StreetAddress = shipment.StreetAddress;
+            Weight = shipment.Weight;
+            Description = shipment.Description;
+            NotifyOfPropertyChange(() => ShippedItem);
+            NotifyOfPropertyChange(() => ItemQuantity);
+            NotifyOfPropertyChange(() => RecipientCompany);
+            NotifyOfPropertyChange(() => CityTown);
+            NotifyOfPropertyChange(() => PostalCode1);
+            NotifyOfPropertyChange(() => PostalCode2);
+            NotifyOfPropertyChange(() => StreetAddress);
+            NotifyOfPropertyChange(() => Weight);
+            NotifyOfPropertyChange(() => Description);
+        }
+
+        public AddShipmentViewModel()
+        {
+            IsEdit = false;
+            ButtonLabel = "Add";
+        }
 
         public void Add()
         {
