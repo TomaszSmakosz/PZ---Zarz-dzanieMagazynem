@@ -132,7 +132,7 @@
     <Compile Include="Service\EquipmentService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="ViewModels\Client\AddClientViewModel.cs" />
-    <Compile Include="ViewModels\AddDeliveryViewModel.cs" />
+    <Compile Include="ViewModels\Delivery\AddDeliveryViewModel.cs" />
     <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
     <Compile Include="ViewModels\AddEquipmentViewModel.cs" />
     <Compile Include="ViewModels\AddOrderViewModel.cs" />
@@ -141,8 +141,9 @@
     <Compile Include="ViewModels\AddInventoryViewModel.cs" />
     <Compile Include="ViewModels\AddReturnViewModel.cs" />
     <Compile Include="ViewModels\Client\ClientGridViewModel.cs" />
+    <Compile Include="ViewModels\Delivery\DeliveryGridViewModel.cs" />
     <Compile Include="ViewModels\ExampleViewModel.cs" />
-    <Compile Include="Views\AddDeliveryView.xaml.cs">
+    <Compile Include="Views\Delivery\AddDeliveryView.xaml.cs">
       <DependentUpon>AddDeliveryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddEmployeeView.xaml.cs">
@@ -166,6 +167,9 @@
     <Compile Include="Views\Client\ClientGridView.xaml.cs">
       <DependentUpon>ClientGridView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Delivery\DeliveryGridView.xaml.cs">
+      <DependentUpon>DeliveryGridView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExampleView.xaml.cs">
       <DependentUpon>ExampleView.xaml</DependentUpon>
     </Compile>
@@ -187,7 +191,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\AddDeliveryView.xaml">
+    <Page Include="Views\Delivery\AddDeliveryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -216,6 +220,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Client\ClientGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Delivery\DeliveryGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

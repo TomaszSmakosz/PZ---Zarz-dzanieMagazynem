@@ -10,8 +10,12 @@ using WarehouseSystem.Service;
 namespace WarehouseSystem.ViewModels
 {
     //ViewModel do widoku AddDelivery
-    internal class AddDeliveryViewModel : Screen
+    public class AddDeliveryViewModel : Screen
     {
+        private bool IsEdit { get; set; }
+
+        private DeliveryDTO toEdit { get; set; }
+
         public string DeliveredItem { get; set; }
         public int ItemQuantity { get; set; }
         public string RecipientCompany { get; set; }
@@ -22,8 +26,38 @@ namespace WarehouseSystem.ViewModels
         public int Weight { get; set; }
         public string Description { get; set; }
 
+        public string ButtonLabel { get; set; }
+
+        public AddDeliveryViewModel(DeliveryDTO delivery)
+        {
+            IsEdit = true;
+            ButtonLabel = "Edit";
+
+            this.toEdit = delivery;
+            DeliveredItem = delivery.DeliveredItem;
+            ItemQuantity = delivery.ItemQuantity;
+            RecipientCompany = delivery.RecipientCompany;
+            CityTown = delivery.CityTown;
+            PostalCode1 = delivery.PostalCode.Substring(0, 2);
+            PostalCode2 = delivery.PostalCode.Substring(3, 6);
+            StreetAddress = delivery.StreetAddress;
+            Weight = delivery.Weight;
+            Description = delivery.Description;
+            NotifyOfPropertyChange(() => DeliveredItem);
+            NotifyOfPropertyChange(() => ItemQuantity);
+            NotifyOfPropertyChange(() => RecipientCompany);
+            NotifyOfPropertyChange(() => CityTown);
+            NotifyOfPropertyChange(() => PostalCode1);
+            NotifyOfPropertyChange(() => PostalCode2);
+            NotifyOfPropertyChange(() => StreetAddress);
+            NotifyOfPropertyChange(() => Weight);
+            NotifyOfPropertyChange(() => Description);
+        }
+
         public AddDeliveryViewModel()
         {
+            IsEdit = false;
+            ButtonLabel = "Add";
         }
 
         public void Add()
