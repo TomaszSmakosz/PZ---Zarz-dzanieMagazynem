@@ -18,16 +18,15 @@
             <DataGrid x:Name="Clients" AutoGenerateColumns="False"  IsReadOnly="true" Height="auto" BorderBrush="#cec35c" BorderThickness="5">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="CompanyName" Binding="{Binding CompanyName}" />
-                    <DataGridTextColumn Header="PostalCode1" Binding="{Binding PostalCode1}" />
-                    <DataGridTextColumn Header="PostalCode2" Binding="{Binding PostalCode2}" />
-                    <DataGridTextColumn Header="Address" Binding="{Binding Address}" />
+                    <DataGridTextColumn Header="FirstName" Binding="{Binding FirstName}" />
+                    <DataGridTextColumn Header="LastName" Binding="{Binding LastName}" />
+                    <DataGridTextColumn Header="BirthDate" Binding="{Binding BirthDate}" />
                     <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
                     <DataGridTextColumn Header="PhoneNumber" Binding="{Binding PhoneNumber}" />
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Edit" x:Name="LoadModifyClientPage" cal:Message.Attach="LoadModifyClientPage($this)" />
+                                <Button Content="Edit" x:Name="LoadModifyUserPage" cal:Message.Attach="LoadModifyUserPage($this)" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -42,7 +41,7 @@
             </DataGrid>
         </ScrollViewer>
         <StackPanel Orientation="Horizontal" Grid.Row="2">
-            <Button Grid.Row="1" Margin="5" Content="Add Client" x:Name="LoadAddClietntPage" HorizontalAlignment="Left" />
+            <Button Grid.Row="1" Margin="5" Content="Add User" x:Name="LoadAddUserPage" HorizontalAlignment="Left" />
             <Button Grid.Row="1" Margin="5" Content="Refresh" x:Name="Reload" HorizontalAlignment="Left" AutomationProperties.AccessKey="Enter" />
         </StackPanel>
     </Grid>
