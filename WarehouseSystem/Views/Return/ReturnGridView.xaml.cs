@@ -17,7 +17,7 @@ namespace WarehouseSystem.Views.Return
     /// <summary>
     /// Logika interakcji dla klasy ReturnGridView.xaml
     /// </summary>
-    public partial class ReturnGridView : Window
+    public partial class ReturnGridView : UserControl
     {
         public ReturnGridView()
         {

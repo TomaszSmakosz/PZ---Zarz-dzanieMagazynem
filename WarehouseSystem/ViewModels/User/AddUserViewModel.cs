@@ -53,7 +53,7 @@ namespace WarehouseSystem.ViewModels
             var newUser = new UserDTO();
             newUser.FirstName = FirstName;
             newUser.LastName = LastName;
-            newUser.PhoneNumber = Phone;
+            newUser.PhoneNumber = PhoneNumber;
             newUser.Email = Email;
             newUser.BirthDate = BirthDate;
             UserService.Add(newUser);

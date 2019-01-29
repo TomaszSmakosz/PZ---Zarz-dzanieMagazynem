@@ -17,7 +17,7 @@ namespace WarehouseSystem.Views.Shipment
     /// <summary>
     /// Logika interakcji dla klasy ShipmentGridView.xaml
     /// </summary>
-    public partial class ShipmentGridView : Window
+    public partial class ShipmentGridView : UserControl
     {
         public ShipmentGridView()
         {
