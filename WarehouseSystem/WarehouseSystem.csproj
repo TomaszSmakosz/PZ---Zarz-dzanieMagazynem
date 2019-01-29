@@ -170,6 +170,12 @@
     <Compile Include="Views\Inventory\AddInventoryView.xaml.cs">
       <DependentUpon>AddInventoryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Inventory\InventoryGridView.xaml.cs">
+      <DependentUpon>InventoryGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Order\OrderGridView.xaml.cs">
+      <DependentUpon>OrderGridView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Return\AddReturnView.xaml.cs">
       <DependentUpon>AddReturnView.xaml</DependentUpon>
     </Compile>
@@ -204,6 +210,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Views\User\UserGridView.xaml.cs">
+      <DependentUpon>UserGridView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\Delivery\AddDeliveryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,6 +234,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Inventory\AddInventoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Inventory\InventoryGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Order\OrderGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -265,6 +282,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\StartUpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\User\UserGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

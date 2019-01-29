@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WarehouseSystem.Views.Shipment
+namespace WarehouseSystem.Views.User
 {
     /// <summary>
-    /// Logika interakcji dla klasy ShipmentGridView.xaml
+    /// Interaction logic for UserGridView.xaml
     /// </summary>
-    public partial class ShipmentGridView : UserControl
+    public partial class UserGridView : UserControl
     {
-        public ShipmentGridView()
+        public UserGridView()
         {
             InitializeComponent();
         }

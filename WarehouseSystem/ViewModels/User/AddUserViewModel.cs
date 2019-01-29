@@ -11,14 +11,41 @@ namespace WarehouseSystem.ViewModels
 {
     public class AddUserViewModel : Screen
     {
+        private bool IsEdit { get; set; }
+
+        private UserDTO toEdit { get; set; }
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
         public DateTime BirthDate { get; set; } = DateTime.Now;
+
+        public string ButtonLabel { get; set; }
+
+        public AddUserViewModel(UserDTO user)
+        {
+            IsEdit = true;
+            ButtonLabel = "Edit";
+
+            this.toEdit = user;
+            FirstName = user.FirstName;
+            LastName = user.LastName;
+            Email = user.Email;
+            PhoneNumber = user.PhoneNumber;
+            BirthDate = user.BirthDate;
+
+            NotifyOfPropertyChange(() => FirstName);
+            NotifyOfPropertyChange(() => LastName);
+            NotifyOfPropertyChange(() => Email);
+            NotifyOfPropertyChange(() => PhoneNumber);
+            NotifyOfPropertyChange(() => BirthDate);
+        }
 
         public AddUserViewModel()
         {
+            IsEdit = false;
+            ButtonLabel = "Add";
         }
 
         public void Add()
@@ -26,7 +53,7 @@ namespace WarehouseSystem.ViewModels
             var newUser = new UserDTO();
             newUser.FirstName = FirstName;
             newUser.LastName = LastName;
-            newUser.PhoneNumber = Phone;
+            newUser.PhoneNumber = PhoneNumber;
             newUser.Email = Email;
             newUser.BirthDate = BirthDate;
             UserService.Add(newUser);
