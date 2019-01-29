@@ -23,6 +23,14 @@ namespace WarehouseSystem.ViewModels.Delivery
             base.OnViewLoaded(view);
         }
 
+        public void LoadAddDeliveryPage()
+        {
+            IWindowManager manager = new WindowManager();
+            AddDeliveryViewModel add = new AddDeliveryViewModel();
+            manager.ShowDialog(add, null, null);
+            Reload();
+        }
+
         public void LoadModifyDeliveryPage(DeliveryDTO client)
         {
             IWindowManager manager = new WindowManager();

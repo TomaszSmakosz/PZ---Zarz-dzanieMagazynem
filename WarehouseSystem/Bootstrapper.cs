@@ -14,17 +14,17 @@ namespace WarehouseSystem
     {
         public Bootstrapper()
         {
-            using (var ctx = new WarehouseContext())
-            {
-                ctx.SaveChanges();
-            }
+            //using (var ctx = new WarehouseContext())
+            //{
+            //    ctx.SaveChanges();
+            //}
 
             Initialize();
         }
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            DisplayRootViewFor<ExampleViewModel>();
+            DisplayRootViewFor<StartUpViewModel>();
         }
     }
 }

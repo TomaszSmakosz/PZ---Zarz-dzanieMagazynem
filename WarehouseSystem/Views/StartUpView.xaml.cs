@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WarehouseSystem.Views
 {
     /// <summary>
-    /// Interaction logic for ExampleView.xaml
+    /// Interaction logic for StartUpView.xaml
     /// </summary>
-    public partial class ExampleView : Page
+    public partial class StartUpView : Window
     {
-        public ExampleView()
+        public StartUpView()
         {
             InitializeComponent();
         }

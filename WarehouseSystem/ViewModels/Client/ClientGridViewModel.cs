@@ -23,6 +23,14 @@ namespace WarehouseSystem.ViewModels.Client
             base.OnViewLoaded(view);
         }
 
+        public void LoadAddClientPage()
+        {
+            IWindowManager manager = new WindowManager();
+            AddClientViewModel add = new AddClientViewModel();
+            manager.ShowDialog(add, null, null);
+            Reload();
+        }
+
         public void LoadModifyClientPage(ClientDTO client)
         {
             IWindowManager manager = new WindowManager();
