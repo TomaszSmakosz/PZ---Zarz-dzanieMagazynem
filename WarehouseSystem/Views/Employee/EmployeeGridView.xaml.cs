@@ -18,7 +18,7 @@ namespace WarehouseSystem.Views.Employee
     /// <summary>
     /// Logika interakcji dla klasy EmployeeGridView.xaml
     /// </summary>
-    public partial class EmployeeGridView : Window
+    public partial class EmployeeGridView : UserControl
     {
         public EmployeeGridView()
         {
