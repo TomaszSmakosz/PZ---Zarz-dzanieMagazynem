@@ -18,7 +18,7 @@ namespace WarehouseSystem.Views.Equipment
     /// <summary>
     /// Logika interakcji dla klasy EquipmentGridView.xaml
     /// </summary>
-    public partial class EquipmentGridView : Window
+    public partial class EquipmentGridView : UserControl
     {
         public EquipmentGridView()
         {
