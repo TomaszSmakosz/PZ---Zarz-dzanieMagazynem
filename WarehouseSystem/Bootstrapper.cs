@@ -14,7 +14,7 @@ namespace WarehouseSystem
     {
         public Bootstrapper()
         {
-            //using (var ctx = new WarehouseContext())
+            //using (var ctx = new WarehouseSystemContext())
             //{
             //    ctx.SaveChanges();
             //}

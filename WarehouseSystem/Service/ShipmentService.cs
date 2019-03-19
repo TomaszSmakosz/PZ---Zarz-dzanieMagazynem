@@ -14,7 +14,7 @@ namespace WarehouseSystem.Service
     {
         public static List<ShipmentDTO> GetAll()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Shipments.Where(x => x.IsDisabled == false).Select(
                                    x => new ShipmentDTO
@@ -35,7 +35,7 @@ namespace WarehouseSystem.Service
 
         public static BindableCollection<ShipmentDTO> GetAllBindableCollection()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = new BindableCollection<ShipmentDTO>(GetAll());
                 return result;
@@ -44,7 +44,7 @@ namespace WarehouseSystem.Service
 
         public static ShipmentDTO GetById(int id)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Shipments.Where(x => x.Id == id).Select(
                                     x => new ShipmentDTO
@@ -66,7 +66,7 @@ namespace WarehouseSystem.Service
 
         public static string Add(ShipmentDTO shipment)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
                 Shipment newShipment = new Shipment();
@@ -100,7 +100,7 @@ namespace WarehouseSystem.Service
 
         public static string Edit(ShipmentDTO shipment)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
 
@@ -135,7 +135,7 @@ namespace WarehouseSystem.Service
 
         public static void Delete(ShipmentDTO shipment)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var toDelete = db.Shipments.Where(x => x.Id == shipment.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;

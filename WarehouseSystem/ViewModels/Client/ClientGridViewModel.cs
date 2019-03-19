@@ -23,7 +23,7 @@ namespace WarehouseSystem.ViewModels.Client
             base.OnViewLoaded(view);
         }
 
-        public void LoadAddClientPage()
+        public void LoadAddClietntPage()
         {
             IWindowManager manager = new WindowManager();
             AddClientViewModel add = new AddClientViewModel();

@@ -3,6 +3,7 @@ using WarehouseSystem.Models;
 using WarehouseSystem.ViewModels.Client;
 using WarehouseSystem.ViewModels.Delivery;
 using WarehouseSystem.ViewModels.Employee;
+using WarehouseSystem.ViewModels.Equipment;
 using WarehouseSystem.ViewModels.Inventory;
 using WarehouseSystem.ViewModels.Order;
 using WarehouseSystem.ViewModels.Return;

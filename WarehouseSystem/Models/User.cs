@@ -26,7 +26,7 @@ namespace WarehouseSystem.Models
         [Required(ErrorMessage = ("Email is required."))]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = ("Phone number is required."))]
+        [Required(ErrorMessage = ("PhoneNumber number is required."))]
         public string PhoneNumber { get; set; }
 
         public bool IsDisabled { get; set; }

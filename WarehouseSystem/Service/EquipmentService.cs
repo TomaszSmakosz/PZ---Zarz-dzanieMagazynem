@@ -14,7 +14,7 @@ namespace WarehouseSystem.Service
     {
         public static List<EquipmentDTO> GetAll()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Equipments.Where(x => x.IsDisabled == false).Select(
                                    x => new EquipmentDTO
@@ -32,7 +32,7 @@ namespace WarehouseSystem.Service
 
         public static BindableCollection<EquipmentDTO> GetAllBindableCollection()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = new BindableCollection<EquipmentDTO>(GetAll());
                 return result;
@@ -41,7 +41,7 @@ namespace WarehouseSystem.Service
 
         public static EquipmentDTO GetById(int id)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Equipments.Where(x => x.Id == id).Select(
                                     x => new EquipmentDTO
@@ -60,7 +60,7 @@ namespace WarehouseSystem.Service
 
         public static string Add(EquipmentDTO equipment)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
                 Equipment newEquipment = new Equipment();
@@ -91,7 +91,7 @@ namespace WarehouseSystem.Service
 
         public static string Edit(EquipmentDTO equipment)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
 
@@ -123,7 +123,7 @@ namespace WarehouseSystem.Service
 
         public static void Delete(EquipmentDTO equipment)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var toDelete = db.Equipments.Where(x => x.Id == equipment.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;

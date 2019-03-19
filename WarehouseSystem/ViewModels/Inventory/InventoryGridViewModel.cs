@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WarehouseSystem.ViewModels
+namespace WarehouseSystem.ViewModels.Inventory
 {
-    class InventoryGridViewModel
+    public class InventoryGridViewModel
     {
     }
 }

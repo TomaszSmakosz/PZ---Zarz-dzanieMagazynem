@@ -16,7 +16,7 @@ namespace WarehouseSystem.Models
         // If you wish to target a different database and/or database provider, modify the 'Model2'
         // connection string in the application configuration file.
         public WarehouseSystemContext()
-            : base("name=ArmyBaseContext")
+            : base("name=WarehouseSystemContext")
         {
         }
 
@@ -30,12 +30,12 @@ namespace WarehouseSystem.Models
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Equipment> Equipments { get; set; }
         public DbSet<Event> Events { get; set; }
-        public DbSet<EventHistory> EventHistorsy { get; set; }
-        public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<EventHistory> EventHistory { get; set; }
+        public DbSet<Inventory> Inventory { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Return> Returns { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
-        public DbSet<User> Uses { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 
     //public class MyEntity

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WarehouseSystem.ViewModels.Order
 {
-    class OrderGridViewModel
+    public class OrderGridViewModel
     {
     }
 }

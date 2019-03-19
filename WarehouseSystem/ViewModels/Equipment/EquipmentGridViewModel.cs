@@ -7,7 +7,7 @@ using WarehouseSystem.DTO;
 using WarehouseSystem.Service;
 using Caliburn.Micro;
 
-namespace WarehouseSystem.ViewModels.Inventory
+namespace WarehouseSystem.ViewModels.Equipment
 {
     internal class EquipmentGridViewModel : Screen
     {

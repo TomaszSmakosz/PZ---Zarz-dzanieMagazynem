@@ -14,7 +14,7 @@ namespace WarehouseSystem.Service
     {
         public static List<InventoryDTO> GetAll()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Inventory.Where(x => x.IsDisabled == false).Select(
                                    x => new InventoryDTO
@@ -34,7 +34,7 @@ namespace WarehouseSystem.Service
 
         public static BindableCollection<InventoryDTO> GetAllBindableCollection()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = new BindableCollection<InventoryDTO>(GetAll());
                 return result;
@@ -43,7 +43,7 @@ namespace WarehouseSystem.Service
 
         public static InventoryDTO GetById(int id)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Inventory.Where(x => x.Id == id).Select(
                                     x => new InventoryDTO
@@ -64,7 +64,7 @@ namespace WarehouseSystem.Service
 
         public static string Add(InventoryDTO inventory)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
                 Inventory newInventory = new Inventory();
@@ -97,7 +97,7 @@ namespace WarehouseSystem.Service
 
         public static string Edit(InventoryDTO inventory)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
 
@@ -131,7 +131,7 @@ namespace WarehouseSystem.Service
 
         public static void Delete(InventoryDTO inventory)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var toDelete = db.Inventory.Where(x => x.Id == inventory.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;

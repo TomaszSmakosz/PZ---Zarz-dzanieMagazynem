@@ -14,7 +14,7 @@ namespace WarehouseSystem.Service
     {
         public static List<EventDTO> GetAll()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Events.Where(x => x.IsDisabled == false).Select(
                                    x => new EventDTO
@@ -31,7 +31,7 @@ namespace WarehouseSystem.Service
 
         public static BindableCollection<EventDTO> GetAllBindableCollection()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = new BindableCollection<EventDTO>(GetAll());
                 return result;
@@ -40,7 +40,7 @@ namespace WarehouseSystem.Service
 
         public static EventDTO GetById(int id)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Events.Where(x => x.Id == id).Select(
                                     x => new EventDTO
@@ -58,7 +58,7 @@ namespace WarehouseSystem.Service
 
         public static string Add(EventDTO eventDTO)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
                 Event newEvent = new Event();
@@ -95,7 +95,7 @@ namespace WarehouseSystem.Service
 
         public static string Edit(EventDTO eventDTO)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
 
@@ -126,7 +126,7 @@ namespace WarehouseSystem.Service
 
         public static void Delete(EventDTO eventDTO)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var toDelete = db.Events.Where(x => x.Id == eventDTO.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;

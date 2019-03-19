@@ -14,7 +14,7 @@ namespace WarehouseSystem.Service
     {
         public static List<OrderDTO> GetAll()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Orders.Where(x => x.IsDisabled == false).Select(
                                    x => new OrderDTO
@@ -33,7 +33,7 @@ namespace WarehouseSystem.Service
 
         public static BindableCollection<OrderDTO> GetAllBindableCollection()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = new BindableCollection<OrderDTO>(GetAll());
                 return result;
@@ -42,7 +42,7 @@ namespace WarehouseSystem.Service
 
         public static OrderDTO GetById(int id)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Orders.Where(x => x.Id == id).Select(
                                     x => new OrderDTO
@@ -62,7 +62,7 @@ namespace WarehouseSystem.Service
 
         public static string Add(OrderDTO order)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
                 Order newOrder = new Order();
@@ -94,7 +94,7 @@ namespace WarehouseSystem.Service
 
         public static string Edit(OrderDTO order)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
 
@@ -127,7 +127,7 @@ namespace WarehouseSystem.Service
 
         public static void Delete(OrderDTO order)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var toDelete = db.Orders.Where(x => x.Id == order.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;

@@ -14,7 +14,7 @@ namespace WarehouseSystem.Service
     {
         public static List<ReturnDTO> GetAll()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Returns.Where(x => x.IsDisabled == false).Select(
                                    x => new ReturnDTO
@@ -31,7 +31,7 @@ namespace WarehouseSystem.Service
 
         public static BindableCollection<ReturnDTO> GetAllBindableCollection()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = new BindableCollection<ReturnDTO>(GetAll());
                 return result;
@@ -40,7 +40,7 @@ namespace WarehouseSystem.Service
 
         public static ReturnDTO GetById(int id)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Returns.Where(x => x.Id == id).Select(
                                     x => new ReturnDTO
@@ -58,7 +58,7 @@ namespace WarehouseSystem.Service
 
         public static string Add(ReturnDTO returnVar)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
                 Return newReturn = new Return();
@@ -88,7 +88,7 @@ namespace WarehouseSystem.Service
 
         public static string Edit(ReturnDTO returnVar)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
 
@@ -119,7 +119,7 @@ namespace WarehouseSystem.Service
 
         public static void Delete(ReturnDTO returnVar)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var toDelete = db.Returns.Where(x => x.Id == returnVar.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;

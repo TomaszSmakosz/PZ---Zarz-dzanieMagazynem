@@ -25,7 +25,7 @@
         <Label Grid.Column="0" Grid.Row="1" Padding="2"  FontSize="12" Margin="5">Last Name</Label>
         <Label Grid.Column="0" Grid.Row="2" Padding="2"  FontSize="12" Margin="5" >Employment Date</Label>
         <Label Grid.Column="0" Grid.Row="3" Padding="2"  FontSize="12" Margin="5" >Email</Label>
-        <Label Grid.Column="0" Grid.Row="4" Padding="2"  FontSize="12" Margin="5">Phone (Not required)</Label>
+        <Label Grid.Column="0" Grid.Row="4" Padding="2"  FontSize="12" Margin="5">PhoneNumber (Not required)</Label>
         <Label Grid.Column="0" Grid.Row="5" Padding="2"  FontSize="12" Margin="5" >Workplace</Label>
         <TextBox Grid.Column="1" Grid.Row="0" x:Name="FirstName" Margin="5" />
         <TextBox Grid.Column="1" Grid.Row="1" x:Name="LastName" Margin="5" />

@@ -14,7 +14,7 @@ namespace WarehouseSystem.Service
     {
         public static List<UserDTO> GetAll()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Users.Where(x => x.IsDisabled == false).Select(
                                    x => new UserDTO
@@ -31,7 +31,7 @@ namespace WarehouseSystem.Service
 
         public static BindableCollection<UserDTO> GetAllBindableCollection()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = new BindableCollection<UserDTO>(GetAll());
                 return result;
@@ -40,7 +40,7 @@ namespace WarehouseSystem.Service
 
         public static UserDTO GetById(int id)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Users.Where(x => x.Id == id).Select(
                                     x => new UserDTO
@@ -58,7 +58,7 @@ namespace WarehouseSystem.Service
 
         public static string Add(UserDTO user)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
                 User newUser = new User();
@@ -88,7 +88,7 @@ namespace WarehouseSystem.Service
 
         public static string Edit(UserDTO user)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
 
@@ -119,7 +119,7 @@ namespace WarehouseSystem.Service
 
         public static void Delete(UserDTO user)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var toDelete = db.Users.Where(x => x.Id == user.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;

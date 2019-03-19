@@ -14,7 +14,7 @@ namespace WarehouseSystem.Service
     {
         public static List<DeliveryDTO> GetAll()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Deliveries.Where(x => x.IsDisabled == false).Select(
                                    x => new DeliveryDTO
@@ -35,7 +35,7 @@ namespace WarehouseSystem.Service
 
         public static BindableCollection<DeliveryDTO> GetAllBindableCollection()
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = new BindableCollection<DeliveryDTO>(GetAll());
                 return result;
@@ -44,7 +44,7 @@ namespace WarehouseSystem.Service
 
         public static DeliveryDTO GetById(int id)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Deliveries.Where(x => x.Id == id).Select(
                                     x => new DeliveryDTO
@@ -66,7 +66,7 @@ namespace WarehouseSystem.Service
 
         public static string Add(DeliveryDTO delivery)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
                 Delivery newDelivery = new Delivery();
@@ -100,7 +100,7 @@ namespace WarehouseSystem.Service
 
         public static string Edit(DeliveryDTO delivery)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 string error = null;
 
@@ -135,7 +135,7 @@ namespace WarehouseSystem.Service
 
         public static void Delete(DeliveryDTO delivery)
         {
-            using (WarehouseContext db = new WarehouseContext())
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var toDelete = db.Deliveries.Where(x => x.Id == delivery.Id).FirstOrDefault();
                 toDelete.IsDisabled = true;
