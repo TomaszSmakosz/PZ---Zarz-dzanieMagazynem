@@ -11,6 +11,9 @@ namespace WarehouseSystem.ViewModels
 {
     public class AddInventoryViewModel : Screen
     {
+        private bool IsEdit { get; set; }
+        private InventoryDTO toEdit { get; set; }
+
         public string ItemFrom { get; set; }
         public string ItemTo { get; set; }
         public DateTime DateOfArrival { get; set; } = DateTime.Now;
@@ -18,6 +21,36 @@ namespace WarehouseSystem.ViewModels
         public int Weight { get; set; }
         public string Status { get; set; }
         public string Description { get; set; }
+        public string ButtonLabel { get; set; }
+
+        public AddInventoryViewModel(InventoryDTO inventory)
+        {
+            IsEdit = true;
+            ButtonLabel = "Edit";
+            this.toEdit = inventory;
+
+            ItemFrom = inventory.ItemFrom;
+            ItemTo = inventory.ItemTo;
+            DateOfArrival = inventory.DateOfArrival;
+            DateToSend = inventory.DateToSend;
+            Weight = inventory.Weight;
+            Status = inventory.Status;
+            Description = inventory.Description;
+
+            NotifyOfPropertyChange(() => ItemFrom);
+            NotifyOfPropertyChange(() => ItemTo);
+            NotifyOfPropertyChange(() => DateOfArrival);
+            NotifyOfPropertyChange(() => DateToSend);
+            NotifyOfPropertyChange(() => Weight);
+            NotifyOfPropertyChange(() => Status);
+            NotifyOfPropertyChange(() => Description);
+        }
+
+        public AddInventoryViewModel()
+        {
+            IsEdit = false;
+            ButtonLabel = "Add";
+        }
 
         public void Add()
         {
@@ -30,7 +63,7 @@ namespace WarehouseSystem.ViewModels
             newInventory.Status = Status;
             newInventory.Description = Description;
             InventoryService.Add(newInventory);
-            TryClose();
+            Close();
         }
 
         public void Close()

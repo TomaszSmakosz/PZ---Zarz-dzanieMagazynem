@@ -14,6 +14,7 @@ namespace WarehouseSystem.ViewModels
     {
         private bool IsEdit { get; set; }
         private ShipmentDTO toEdit { get; set; }
+
         public string ShippedItem { get; set; }
         public int ItemQuantity { get; set; }
         public string RecipientCompany { get; set; }

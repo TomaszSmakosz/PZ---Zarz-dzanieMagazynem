@@ -32,7 +32,7 @@
         <Label Grid.Column="0" Grid.Row="5" Padding="2"  FontSize="12" Margin="5">Street Address</Label>
         <Label Grid.Column="0" Grid.Row="6" Padding="2"  FontSize="12" Margin="5">Weight</Label>
         <Label Grid.Column="0" Grid.Row="7" Padding="2"  FontSize="12" Margin="5">Description</Label>
-        <TextBox Grid.Column="1" Grid.Row="0" x:Name="ShippedItem" Margin="5" />
+        <TextBox Grid.Column="1" Grid.Row="0" x:Name="DeliveredItem" Margin="5" />
         <TextBox Grid.Column="1" Grid.Row="1" x:Name="ItemQuantity" Margin="5,5,286,5" />
         <TextBox Grid.Column="1" Grid.Row="2" x:Name="RecipientCompany" Margin="5" />
         <TextBox Grid.Column="1" Grid.Row="3" x:Name="CityTown" Margin="5" />

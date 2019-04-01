@@ -18,12 +18,12 @@
             <DataGrid x:Name="Deliveries" AutoGenerateColumns="False"  IsReadOnly="true" Height="auto" BorderBrush="#cec35c" BorderThickness="5">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
-                    <DataGridTextColumn Header="DeliveryItem" Binding="{Binding DeliveryItem}" />
+                    <DataGridTextColumn Header="DeliveredItem" Binding="{Binding DeliveredItem}" />
                     <DataGridTextColumn Header="ItemQuantity" Binding="{Binding ItemQuantity}" />
                     <DataGridTextColumn Header="RecipientCompany" Binding="{Binding RecipientCompany}" />
                     <DataGridTextColumn Header="CityTown" Binding="{Binding CityTown}" />
-                    <DataGridTextColumn Header="PostalCode1" Binding="{Binding PostalCode1}" />
-                    <DataGridTextColumn Header="PostalCode2" Binding="{Binding PostalCode2}" />
+                    <DataGridTextColumn Header="PostalCode" Binding="{Binding PostalCode}" />
+                    <!--<DataGridTextColumn Header="PostalCode2" Binding="{Binding PostalCode2}" />-->
                     <DataGridTextColumn Header="StreetAddress" Binding="{Binding StreetAddress}" />
                     <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" />
                     <DataGridTextColumn Header="Description" Binding="{Binding Description}" />

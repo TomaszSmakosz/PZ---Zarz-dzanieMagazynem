@@ -30,8 +30,8 @@
         <Label Grid.Column="0" Grid.Row="4" Padding="2"  FontSize="12" Margin="5">Weight</Label>
         <Label Grid.Column="0" Grid.Row="5" Padding="2"  FontSize="12" Margin="5">Status</Label>
         <Label Grid.Column="0" Grid.Row="6" Padding="2"  FontSize="12" Margin="5">Description</Label>
-        <TextBox Grid.Column="1" Grid.Row="0" x:Name="NameFrom" Margin="5" />
-        <TextBox Grid.Column="1" Grid.Row="1" x:Name="NameTo" Margin="5" />
+        <TextBox Grid.Column="1" Grid.Row="0" x:Name="ItemFrom" Margin="5" />
+        <TextBox Grid.Column="1" Grid.Row="1" x:Name="ItemTo" Margin="5" />
         <DatePicker Grid.Column="1" Grid.Row="2"  x:Name="DateOfArrival" FirstDayOfWeek="Monday" DisplayDateStart="1753-01-01" Margin="5" />
         <DatePicker Grid.Column="1" Grid.Row="3"  x:Name="DateToSend" FirstDayOfWeek="Monday" DisplayDateStart="1753-01-01" Margin="5" />
         <TextBox Grid.Column="1" Grid.Row="4" x:Name="Weight" Margin="5" />

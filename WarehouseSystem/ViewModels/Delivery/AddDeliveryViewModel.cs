@@ -39,7 +39,7 @@ namespace WarehouseSystem.ViewModels
             RecipientCompany = delivery.RecipientCompany;
             CityTown = delivery.CityTown;
             PostalCode1 = delivery.PostalCode.Substring(0, 2);
-            PostalCode2 = delivery.PostalCode.Substring(3, 6);
+            PostalCode2 = delivery.PostalCode.Substring(2, 3);
             StreetAddress = delivery.StreetAddress;
             Weight = delivery.Weight;
             Description = delivery.Description;

@@ -22,8 +22,8 @@
                     <DataGridTextColumn Header="ItemQuantity" Binding="{Binding ItemQuantity}" />
                     <DataGridTextColumn Header="RecipientCompany" Binding="{Binding RecipientCompany}" />
                     <DataGridTextColumn Header="CityTown" Binding="{Binding CityTown}" />
-                    <DataGridTextColumn Header="PostalCode1" Binding="{Binding PostalCode1}" />
-                    <DataGridTextColumn Header="PostalCode2" Binding="{Binding PostalCode2}" />
+                    <DataGridTextColumn Header="PostalCode" Binding="{Binding PostalCode}" />
+                    <!--<DataGridTextColumn Header="PostalCode2" Binding="{Binding PostalCode2}" />-->
                     <DataGridTextColumn Header="StreetAddress" Binding="{Binding StreetAddress}" />
                     <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" />
                     <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
@@ -49,4 +49,4 @@
             <Button Grid.Row="1" Margin="5" Content="Refresh" x:Name="Reload" HorizontalAlignment="Left" AutomationProperties.AccessKey="Enter" />
         </StackPanel>
     </Grid>
-    </UserControl>
+</UserControl>

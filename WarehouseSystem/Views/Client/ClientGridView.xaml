@@ -19,8 +19,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                     <DataGridTextColumn Header="CompanyName" Binding="{Binding CompanyName}" />
-                    <DataGridTextColumn Header="PostalCode1" Binding="{Binding PostalCode1}" />
-                    <DataGridTextColumn Header="PostalCode2" Binding="{Binding PostalCode2}" />
+                    <DataGridTextColumn Header="PostalCode" Binding="{Binding PostalCode}" />
+                    <!--<DataGridTextColumn Header="PostalCode2" Binding="{Binding PostalCode2}" />-->
                     <DataGridTextColumn Header="Address" Binding="{Binding Address}" />
                     <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
                     <DataGridTextColumn Header="PhoneNumber" Binding="{Binding PhoneNumber}" />

@@ -19,6 +19,7 @@ namespace WarehouseSystem.ViewModels
         private ClientDTO toEdit { get; set; }
 
         public string CompanyName { get; set; }
+        public string CityTown { get; set; }
         public string PostalCode1 { get; set; }
         public string PostalCode2 { get; set; }
         public string Address { get; set; }
@@ -34,6 +35,7 @@ namespace WarehouseSystem.ViewModels
 
             this.toEdit = client;
             CompanyName = client.CompanyName;
+            CityTown = client.CityTown;
             PostalCode1 = client.PostalCode.Substring(0, 2);
             PostalCode2 = client.PostalCode.Substring(2, 3);
             Address = client.Address;
