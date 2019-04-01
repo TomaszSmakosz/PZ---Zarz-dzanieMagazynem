@@ -17,9 +17,9 @@ namespace WarehouseSystem.Views
     /// <summary>
     /// Logika interakcji dla klasy AddOrdersView.xaml
     /// </summary>
-    public partial class AddOrdersView : Window
+    public partial class AddOrderView : Window
     {
-        public AddOrdersView()
+        public AddOrderView()
         {
             InitializeComponent();
         }
