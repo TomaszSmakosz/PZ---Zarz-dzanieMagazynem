@@ -68,7 +68,7 @@ namespace WarehouseSystem.ViewModels
             newEmployee.PhoneNumber = PhoneNumber;
             newEmployee.Workplace = Workplace;
             EmployeeService.Add(newEmployee);
-            TryClose();
+            Close();
         }
 
         public void Close()

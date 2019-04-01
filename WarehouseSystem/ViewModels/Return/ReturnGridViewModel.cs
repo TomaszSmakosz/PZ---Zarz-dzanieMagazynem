@@ -31,18 +31,18 @@ namespace WarehouseSystem.ViewModels.Return
             Reload();
         }
 
-        public void LoadModifyReturnPage(ReturnDTO client)
+        public void LoadModifyReturnPage(ReturnDTO ret)
         {
             IWindowManager manager = new WindowManager();
-            AddReturnViewModel modify = new AddReturnViewModel(client);
+            AddReturnViewModel modify = new AddReturnViewModel(ret);
             manager.ShowDialog(modify, null, null);
             Reload();
         }
 
-        public void Delete(ReturnDTO client)
+        public void Delete(ReturnDTO ret)
         {
             IWindowManager manager = new WindowManager();
-            ReturnService.Delete(client);
+            ReturnService.Delete(ret);
             Reload();
         }
 

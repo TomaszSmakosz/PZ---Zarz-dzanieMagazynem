@@ -35,7 +35,7 @@ namespace WarehouseSystem.ViewModels
             this.toEdit = client;
             CompanyName = client.CompanyName;
             PostalCode1 = client.PostalCode.Substring(0, 2);
-            PostalCode2 = client.PostalCode.Substring(3, 6);
+            PostalCode2 = client.PostalCode.Substring(2, 3);
             Address = client.Address;
             Email = client.Email;
             PhoneNumber = client.PhoneNumber;
@@ -62,7 +62,7 @@ namespace WarehouseSystem.ViewModels
             newClient.Email = Email;
             newClient.PhoneNumber = PhoneNumber;
             ClientService.Add(newClient);
-            TryClose();
+            Close();
         }
 
         public void Close()

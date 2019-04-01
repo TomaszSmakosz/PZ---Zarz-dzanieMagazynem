@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WarehouseSystem.Views"
         mc:Ignorable="d"
-        Title="Add a new client" MinHeight="300" MinWidth="450" Height="300" Width="405" x:Name="AddClientPage" WindowStartupLocation="CenterScreen">
+        Title="Add a new client" MinHeight="350" MinWidth="450" Height="300" Width="405" x:Name="AddClientPage" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid.RowDefinitions>
