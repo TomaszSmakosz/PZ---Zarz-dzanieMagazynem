@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WarehouseSystem.Models.Initializer;
 
 namespace WarehouseSystem.Models
 {
@@ -18,6 +19,11 @@ namespace WarehouseSystem.Models
         public WarehouseSystemContext()
             : base("name=WarehouseSystemContext")
         {
+        }
+
+        public static void Seed(WarehouseSystemContext context)
+        {
+            WarehouseSystemDBInitializer.Seed(context);
         }
 
         // Add a DbSet for each entity type that you want to include in your Models. For more information
