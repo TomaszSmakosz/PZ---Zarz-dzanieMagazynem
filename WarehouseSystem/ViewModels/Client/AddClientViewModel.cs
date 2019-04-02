@@ -37,7 +37,7 @@ namespace WarehouseSystem.ViewModels
             CompanyName = client.CompanyName;
             CityTown = client.CityTown;
             PostalCode1 = client.PostalCode.Substring(0, 2);
-            PostalCode2 = client.PostalCode.Substring(2, 3);
+            PostalCode2 = client.PostalCode.Substring(3, 3);
             Address = client.Address;
             Email = client.Email;
             PhoneNumber = client.PhoneNumber;
