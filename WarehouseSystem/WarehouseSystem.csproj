@@ -146,6 +146,8 @@
     <Compile Include="ViewModels\Employee\EmployeeGridViewModel.cs" />
     <Compile Include="ViewModels\Equipment\AddEquipmentViewModel.cs" />
     <Compile Include="ViewModels\Equipment\EquipmentGridViewModel.cs" />
+    <Compile Include="ViewModels\Event\AddEventViewModel.cs" />
+    <Compile Include="ViewModels\Event\EventGridViewModel.cs" />
     <Compile Include="ViewModels\Inventory\InventoryGridViewModel.cs" />
     <Compile Include="ViewModels\Order\AddOrderViewModel.cs" />
     <Compile Include="ViewModels\Order\OrderGridViewModel.cs" />

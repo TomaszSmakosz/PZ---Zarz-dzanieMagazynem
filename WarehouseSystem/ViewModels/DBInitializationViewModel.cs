@@ -38,8 +38,7 @@ namespace WarehouseSystem.ViewModels
         public void CreatDB()
         {
             context.Database.Create();
-            if (WithSeed)
-                WarehouseSystemContext.Seed(context);
+            WarehouseSystemContext.Seed(context);
         }
 
         public void ReloadGrid()
