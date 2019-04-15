@@ -19,6 +19,7 @@ namespace WarehouseSystem.Service
                 var result = db.Users.Where(x => x.IsDisabled == false).Select(
                                    x => new UserDTO
                                    {
+                                       Id = x.Id,
                                        FirstName = x.FirstName,
                                        LastName = x.LastName,
                                        Email = x.Email,
@@ -62,6 +63,7 @@ namespace WarehouseSystem.Service
             {
                 string error = null;
                 User newUser = new User();
+                newUser.Id = user.Id;
                 newUser.FirstName = user.FirstName;
                 newUser.LastName = user.LastName;
                 newUser.Email = user.Email;
@@ -94,6 +96,7 @@ namespace WarehouseSystem.Service
 
                 var toModify = db.Users.Where(x => x.Id == user.Id).FirstOrDefault();
 
+                toModify.Id = user.Id;
                 toModify.FirstName = user.FirstName;
                 toModify.LastName = user.LastName;
                 toModify.Email = user.Email;

@@ -13,7 +13,7 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Clients" FontSize="28" FontWeight="ExtraBold" />
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="Users" FontSize="28" FontWeight="ExtraBold" />
         <ScrollViewer  VerticalScrollBarVisibility="Auto" Height="Auto" Grid.Row="1">
             <DataGrid x:Name="Users" AutoGenerateColumns="False"  IsReadOnly="true" Height="auto" BorderBrush="#cec35c" BorderThickness="5">
                 <DataGrid.Columns>
