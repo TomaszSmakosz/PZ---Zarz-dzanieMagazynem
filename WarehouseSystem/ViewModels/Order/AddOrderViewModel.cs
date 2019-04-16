@@ -58,16 +58,31 @@ namespace WarehouseSystem.ViewModels
 
         public void Add()
         {
-            var newOrder = new OrderDTO();
-            newOrder.OrderItem = OrderItem;
-            newOrder.ItemQuantity = ItemQuantity;
-            newOrder.RecipientCompany = RecipientCompany;
-            newOrder.CityTown = CityTown;
-            newOrder.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
-            newOrder.StreetAddress = StreetAddress;
-            newOrder.Weight = Weight;
-            newOrder.Description = Description;
-            OrderService.Add(newOrder);
+            if (IsEdit == true)
+            {
+                toEdit.OrderItem = OrderItem;
+                toEdit.ItemQuantity = ItemQuantity;
+                toEdit.RecipientCompany = RecipientCompany;
+                toEdit.CityTown = CityTown;
+                toEdit.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
+                toEdit.StreetAddress = StreetAddress;
+                toEdit.Weight = Weight;
+                toEdit.Description = Description;
+                OrderService.Edit(toEdit);
+            }
+            else
+            {
+                var newOrder = new OrderDTO();
+                newOrder.OrderItem = OrderItem;
+                newOrder.ItemQuantity = ItemQuantity;
+                newOrder.RecipientCompany = RecipientCompany;
+                newOrder.CityTown = CityTown;
+                newOrder.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
+                newOrder.StreetAddress = StreetAddress;
+                newOrder.Weight = Weight;
+                newOrder.Description = Description;
+                OrderService.Add(newOrder);
+            }
             TryClose();
         }
 

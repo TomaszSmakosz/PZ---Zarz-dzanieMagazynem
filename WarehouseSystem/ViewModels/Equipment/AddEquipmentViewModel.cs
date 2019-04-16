@@ -51,13 +51,25 @@ namespace WarehouseSystem.ViewModels
 
         public void Add()
         {
-            var newEquipment = new EquipmentDTO();
-            newEquipment.Type = Type;
-            newEquipment.Mark = Mark;
-            newEquipment.Model = Model;
-            newEquipment.AddDate = AddDate;
-            newEquipment.Status = Status;
-            EquipmentService.Add(newEquipment);
+            if (IsEdit == true)
+            {
+                ToEdit.Type = Type;
+                ToEdit.Mark = Mark;
+                ToEdit.Model = Model;
+                ToEdit.AddDate = AddDate;
+                ToEdit.Status = Status;
+                EquipmentService.Edit(ToEdit);
+            }
+            else
+            {
+                var newEquipment = new EquipmentDTO();
+                newEquipment.Type = Type;
+                newEquipment.Mark = Mark;
+                newEquipment.Model = Model;
+                newEquipment.AddDate = AddDate;
+                newEquipment.Status = Status;
+                EquipmentService.Add(newEquipment);
+            }
             TryClose();
         }
 

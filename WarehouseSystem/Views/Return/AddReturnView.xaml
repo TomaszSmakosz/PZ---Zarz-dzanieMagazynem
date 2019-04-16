@@ -30,7 +30,7 @@
         <TextBox Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" x:Name="Description" Margin="5" />
         <Button Grid.Column="1" x:Name="AddAttachment" Content="Add attachment" Width="100" Height="auto" IsDefault="True" Margin="5" HorizontalAlignment="Left" Grid.Row="4" />
 
-        <Button Grid.Column="1" x:Name="Add" Content="Add" Width="100" Height="auto" IsDefault="True" Margin="5" HorizontalAlignment="Right" Grid.Row="5" />
+        <Button Grid.Column="1" x:Name="Add" Content="{Binding ButtonLabel, Mode=OneWay, FallbackValue=Add}" Width="100" Height="auto" IsDefault="True" Margin="5" HorizontalAlignment="Right" Grid.Row="5" />
         <Button Grid.Column="1" x:Name="Close" Content="Cancel"  Width="100" Height="auto" IsCancel="True" Margin="5" HorizontalAlignment="Right" Grid.Row="6" />
     </Grid>
 </Window>

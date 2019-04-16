@@ -50,13 +50,25 @@ namespace WarehouseSystem.ViewModels
 
         public void Add()
         {
-            var newUser = new UserDTO();
-            newUser.FirstName = FirstName;
-            newUser.LastName = LastName;
-            newUser.PhoneNumber = PhoneNumber;
-            newUser.Email = Email;
-            newUser.BirthDate = BirthDate;
-            UserService.Add(newUser);
+            if (IsEdit == true)
+            {
+                toEdit.FirstName = FirstName;
+                toEdit.LastName = LastName;
+                toEdit.PhoneNumber = PhoneNumber;
+                toEdit.Email = Email;
+                toEdit.BirthDate = BirthDate;
+                UserService.Edit(toEdit);
+            }
+            else
+            {
+                var newUser = new UserDTO();
+                newUser.FirstName = FirstName;
+                newUser.LastName = LastName;
+                newUser.PhoneNumber = PhoneNumber;
+                newUser.Email = Email;
+                newUser.BirthDate = BirthDate;
+                UserService.Add(newUser);
+            }
             TryClose();
         }
 

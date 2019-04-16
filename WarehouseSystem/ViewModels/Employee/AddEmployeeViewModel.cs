@@ -60,14 +60,27 @@ namespace WarehouseSystem.ViewModels
 
         public void Add()
         {
-            var newEmployee = new EmployeeDTO();
-            newEmployee.FirstName = FirstName;
-            newEmployee.LastName = LastName;
-            newEmployee.EmploymentDate = EmploymentDate;
-            newEmployee.Email = Email;
-            newEmployee.PhoneNumber = PhoneNumber;
-            newEmployee.Workplace = Workplace;
-            EmployeeService.Add(newEmployee);
+            if (IsEdit == true)
+            {
+                ToEdit.FirstName = FirstName;
+                ToEdit.LastName = LastName;
+                ToEdit.EmploymentDate = EmploymentDate;
+                ToEdit.Email = Email;
+                ToEdit.PhoneNumber = PhoneNumber;
+                ToEdit.Workplace = Workplace;
+                EmployeeService.Edit(ToEdit);
+            }
+            else
+            {
+                var newEmployee = new EmployeeDTO();
+                newEmployee.FirstName = FirstName;
+                newEmployee.LastName = LastName;
+                newEmployee.EmploymentDate = EmploymentDate;
+                newEmployee.Email = Email;
+                newEmployee.PhoneNumber = PhoneNumber;
+                newEmployee.Workplace = Workplace;
+                EmployeeService.Add(newEmployee);
+            }
             Close();
         }
 

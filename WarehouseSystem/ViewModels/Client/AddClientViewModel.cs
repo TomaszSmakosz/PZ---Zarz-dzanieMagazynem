@@ -32,7 +32,6 @@ namespace WarehouseSystem.ViewModels
         {
             IsEdit = true;
             ButtonLabel = "Edit";
-
             this.toEdit = client;
             CompanyName = client.CompanyName;
             CityTown = client.CityTown;
@@ -57,13 +56,25 @@ namespace WarehouseSystem.ViewModels
 
         public void Add()
         {
-            var newClient = new ClientDTO();
-            newClient.CompanyName = CompanyName;
-            newClient.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
-            newClient.Address = Address;
-            newClient.Email = Email;
-            newClient.PhoneNumber = PhoneNumber;
-            ClientService.Add(newClient);
+            if (IsEdit == true)
+            {
+                toEdit.CompanyName = CompanyName;
+                toEdit.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
+                toEdit.Address = Address;
+                toEdit.Email = Email;
+                toEdit.PhoneNumber = PhoneNumber;
+                ClientService.Edit(toEdit);
+            }
+            else
+            {
+                var newClient = new ClientDTO();
+                newClient.CompanyName = CompanyName;
+                newClient.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
+                newClient.Address = Address;
+                newClient.Email = Email;
+                newClient.PhoneNumber = PhoneNumber;
+                ClientService.Add(newClient);
+            }
             Close();
         }
 

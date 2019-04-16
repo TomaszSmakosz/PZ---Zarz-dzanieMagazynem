@@ -31,7 +31,7 @@ namespace WarehouseSystem.ViewModels.Equipment
             Reload();
         }
 
-        public void LoadModifyShipmentPage(EquipmentDTO equipment)
+        public void LoadModifyEquipmentPage(EquipmentDTO equipment)
         {
             IWindowManager manager = new WindowManager();
             AddEquipmentViewModel modify = new AddEquipmentViewModel(equipment);

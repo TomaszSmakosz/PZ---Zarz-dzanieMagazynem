@@ -46,12 +46,23 @@ namespace WarehouseSystem.ViewModels
 
         public void Add()
         {
-            var newReturn = new ReturnDTO();
-            newReturn.Date = DateOfAddition;
-            newReturn.Client = Client;
-            newReturn.Description = Description;
-            newReturn.Attachment = Attachment;
-            ReturnService.Add(newReturn);
+            if (IsEdit == true)
+            {
+                toEdit.Date = DateOfAddition;
+                toEdit.Client = Client;
+                toEdit.Description = Description;
+                toEdit.Attachment = Attachment;
+                ReturnService.Edit(toEdit);
+            }
+            else
+            {
+                var newReturn = new ReturnDTO();
+                newReturn.Date = DateOfAddition;
+                newReturn.Client = Client;
+                newReturn.Description = Description;
+                newReturn.Attachment = Attachment;
+                ReturnService.Add(newReturn);
+            }
             Close();
         }
 

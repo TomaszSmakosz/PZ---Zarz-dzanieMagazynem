@@ -62,16 +62,31 @@ namespace WarehouseSystem.ViewModels
 
         public void Add()
         {
-            var newDelivery = new DeliveryDTO();
-            newDelivery.DeliveredItem = DeliveredItem;
-            newDelivery.ItemQuantity = ItemQuantity;
-            newDelivery.RecipientCompany = RecipientCompany;
-            newDelivery.CityTown = CityTown;
-            newDelivery.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
-            newDelivery.StreetAddress = StreetAddress;
-            newDelivery.Weight = Weight;
-            newDelivery.Description = Description;
-            DeliveryService.Add(newDelivery);
+            if (IsEdit == true)
+            {
+                toEdit.DeliveredItem = DeliveredItem;
+                toEdit.ItemQuantity = ItemQuantity;
+                toEdit.RecipientCompany = RecipientCompany;
+                toEdit.CityTown = CityTown;
+                toEdit.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
+                toEdit.StreetAddress = StreetAddress;
+                toEdit.Weight = Weight;
+                toEdit.Description = Description;
+                DeliveryService.Edit(toEdit);
+            }
+            else
+            {
+                var newDelivery = new DeliveryDTO();
+                newDelivery.DeliveredItem = DeliveredItem;
+                newDelivery.ItemQuantity = ItemQuantity;
+                newDelivery.RecipientCompany = RecipientCompany;
+                newDelivery.CityTown = CityTown;
+                newDelivery.PostalCode = string.Format("{0}-{1}", PostalCode1, PostalCode2);
+                newDelivery.StreetAddress = StreetAddress;
+                newDelivery.Weight = Weight;
+                newDelivery.Description = Description;
+                DeliveryService.Add(newDelivery);
+            }
             TryClose();
         }
 

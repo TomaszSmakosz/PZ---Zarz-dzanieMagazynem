@@ -54,15 +54,29 @@ namespace WarehouseSystem.ViewModels
 
         public void Add()
         {
-            var newInventory = new InventoryDTO();
-            newInventory.ItemFrom = ItemFrom;
-            newInventory.ItemTo = ItemTo;
-            newInventory.DateOfArrival = DateOfArrival;
-            newInventory.DateToSend = DateToSend;
-            newInventory.Weight = Weight;
-            newInventory.Status = Status;
-            newInventory.Description = Description;
-            InventoryService.Add(newInventory);
+            if (IsEdit == true)
+            {
+                toEdit.ItemFrom = ItemFrom;
+                toEdit.ItemTo = ItemTo;
+                toEdit.DateOfArrival = DateOfArrival;
+                toEdit.DateToSend = DateToSend;
+                toEdit.Weight = Weight;
+                toEdit.Status = Status;
+                toEdit.Description = Description;
+                InventoryService.Edit(toEdit);
+            }
+            else
+            {
+                var newInventory = new InventoryDTO();
+                newInventory.ItemFrom = ItemFrom;
+                newInventory.ItemTo = ItemTo;
+                newInventory.DateOfArrival = DateOfArrival;
+                newInventory.DateToSend = DateToSend;
+                newInventory.Weight = Weight;
+                newInventory.Status = Status;
+                newInventory.Description = Description;
+                InventoryService.Add(newInventory);
+            }
             Close();
         }
 
