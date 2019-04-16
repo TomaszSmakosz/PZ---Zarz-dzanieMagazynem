@@ -7,7 +7,7 @@ using Caliburn.Micro;
 using WarehouseSystem.DTO;
 using WarehouseSystem.Service;
 
-namespace WarehouseSystem.ViewModels.Event
+namespace WarehouseSystem.ViewModels
 {
     public class AddEventViewModel : Screen
     {
@@ -44,12 +44,23 @@ namespace WarehouseSystem.ViewModels.Event
 
         public void Add()
         {
-            var newEvent = new EventDTO();
-            newEvent.Name = Name;
-            newEvent.Description = Description;
-            newEvent.UserId = UserId;
-            newEvent.Executed = Executed;
-            EventService.Add(newEvent);
+            if (IsEdit == true)
+            {
+                toEdit.Name = Name;
+                toEdit.Description = Description;
+                toEdit.UserId = UserId;
+                toEdit.Executed = Executed;
+                EventService.Edit(toEdit);
+            }
+            else
+            {
+                var newEvent = new EventDTO();
+                newEvent.Name = Name;
+                newEvent.Description = Description;
+                newEvent.UserId = UserId;
+                newEvent.Executed = Executed;
+                EventService.Add(newEvent);
+            }
             TryClose();
         }
 

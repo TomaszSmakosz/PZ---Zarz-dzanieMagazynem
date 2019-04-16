@@ -33,6 +33,7 @@
             <Button x:Name="LoadReturnPage" Margin="5">Returns</Button>
             <Button x:Name="LoadShipmentPage" Margin="5">Shipments</Button>
             <Button x:Name="LoadUserPage" Margin="5">Users</Button>
+            <Button x:Name="LoadEventPage" Margin="5">Events</Button>
         </StackPanel>
 
         <!-- Row 2 -->

@@ -179,6 +179,12 @@
     <Compile Include="Views\Equipment\EquipmentGridView.xaml.cs">
       <DependentUpon>EquipmentGridView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Event\AddEventView.xaml.cs">
+      <DependentUpon>AddEventView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Event\EventGridView.xaml.cs">
+      <DependentUpon>EventGridView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Inventory\AddInventoryView.xaml.cs">
       <DependentUpon>AddInventoryView.xaml</DependentUpon>
     </Compile>
@@ -246,6 +252,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Equipment\EquipmentGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Event\AddEventView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Event\EventGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
