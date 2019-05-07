@@ -146,6 +146,7 @@
     <Compile Include="ViewModels\Employee\EmployeeGridViewModel.cs" />
     <Compile Include="ViewModels\Equipment\AddEquipmentViewModel.cs" />
     <Compile Include="ViewModels\Equipment\EquipmentGridViewModel.cs" />
+    <Compile Include="ViewModels\EventReadOnly\EventReadOnlyGridViewModel.cs" />
     <Compile Include="ViewModels\Event\AddEventViewModel.cs" />
     <Compile Include="ViewModels\Event\EventGridViewModel.cs" />
     <Compile Include="ViewModels\Inventory\InventoryGridViewModel.cs" />
@@ -178,6 +179,9 @@
     </Compile>
     <Compile Include="Views\Equipment\EquipmentGridView.xaml.cs">
       <DependentUpon>EquipmentGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventReadOnly\EventReadOnlyGridView.xaml.cs">
+      <DependentUpon>EventReadOnlyGridView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Event\AddEventView.xaml.cs">
       <DependentUpon>AddEventView.xaml</DependentUpon>
@@ -252,6 +256,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Equipment\EquipmentGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EventReadOnly\EventReadOnlyGridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
