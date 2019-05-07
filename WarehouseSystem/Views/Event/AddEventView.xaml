@@ -29,7 +29,7 @@
         <TextBox Grid.Column="1" Grid.Row="1" x:Name="Description" Margin="5" />
         <CheckBox Grid.Column="1" Grid.Row="2" x:Name="Executed" Margin="5"></CheckBox>
         <!--<TextBox Grid.Column="1" Grid.Row="3"  x:Name="UserId" Margin="5" />-->
-        <ComboBox Grid.Column="1" Grid.Row="3" Margin="5" x:Name="Users" >
+        <ComboBox Grid.Column="1" Grid.Row="3" Margin="5" x:Name="Users" IsSynchronizedWithCurrentItem="True">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
