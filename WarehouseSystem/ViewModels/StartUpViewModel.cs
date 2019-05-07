@@ -10,6 +10,7 @@ using WarehouseSystem.ViewModels.Return;
 using WarehouseSystem.ViewModels.Shipment;
 using WarehouseSystem.ViewModels.User;
 using WarehouseSystem.ViewModels.Event;
+using WarehouseSystem.ViewModels.EventReadOnly;
 
 namespace WarehouseSystem.ViewModels
 {
@@ -82,6 +83,11 @@ namespace WarehouseSystem.ViewModels
         public void LoadEventPage()
         {
             ActiveItem = new EventGridViewModel();
+        }
+
+        public void LoadEventReadOnlyPage()
+        {
+            ActiveItem = new EventReadOnlyGridViewModel();
         }
     }
 }
