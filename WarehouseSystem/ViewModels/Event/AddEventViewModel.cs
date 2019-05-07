@@ -14,10 +14,28 @@ namespace WarehouseSystem.ViewModels
         public string Name { get; set; }
         public string Description { get; set; }
         public bool Executed { get; set; }
-        public int UserId { get; set; }
+        //public int UserId { get; set; }
         private bool IsEdit { get; set; }
         public string ButtonLabel { get; set; }
         private EventDTO toEdit { get; set; }
+        public BindableCollection<UserDTO> Users
+        {
+            get
+            {
+                return new BindableCollection<UserDTO>(UserService.GetAll());
+            }
+        }
+
+        private UserDTO _selectedUser;
+        public UserDTO SelectedUser
+        {
+            get { return _selectedUser; }
+            set
+            {
+                _selectedUser = value;
+                NotifyOfPropertyChange(() => SelectedUser);
+            }
+        }
 
         public AddEventViewModel(EventDTO customEvent)
         {
@@ -27,12 +45,13 @@ namespace WarehouseSystem.ViewModels
             Name = customEvent.Name;
             Description = customEvent.Description;
             Executed = customEvent.Executed;
-            UserId = customEvent.UserId;
+            SelectedUser = UserService.GetById(customEvent.UserId);
+            SelectedUser.Id = customEvent.UserId;
 
             NotifyOfPropertyChange(() => Name);
             NotifyOfPropertyChange(() => Description);
             NotifyOfPropertyChange(() => Executed);
-            NotifyOfPropertyChange(() => UserId);
+            NotifyOfPropertyChange(() => SelectedUser);
             NotifyOfPropertyChange(() => Description);
         }
 
@@ -48,7 +67,7 @@ namespace WarehouseSystem.ViewModels
             {
                 toEdit.Name = Name;
                 toEdit.Description = Description;
-                toEdit.UserId = UserId;
+                toEdit.UserId = SelectedUser.Id;
                 toEdit.Executed = Executed;
                 EventService.Edit(toEdit);
             }
@@ -57,7 +76,7 @@ namespace WarehouseSystem.ViewModels
                 var newEvent = new EventDTO();
                 newEvent.Name = Name;
                 newEvent.Description = Description;
-                newEvent.UserId = UserId;
+                newEvent.UserId = SelectedUser.Id;
                 newEvent.Executed = Executed;
                 EventService.Add(newEvent);
             }

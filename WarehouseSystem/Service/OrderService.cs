@@ -26,6 +26,7 @@ namespace WarehouseSystem.Service
                                        PostalCode = x.PostalCode,
                                        CityTown = x.CityTown,
                                        StreetAddress = x.StreetAddress,
+                                       Description = x.Description,
                                    }).ToList();
                 return result;
             }
@@ -54,6 +55,7 @@ namespace WarehouseSystem.Service
                                         PostalCode = x.PostalCode,
                                         CityTown = x.CityTown,
                                         StreetAddress = x.StreetAddress,
+                                        Description = x.Description,
                                     }).FirstOrDefault();
 
                 return result;
@@ -73,6 +75,7 @@ namespace WarehouseSystem.Service
                 newOrder.PostalCode = order.PostalCode;
                 newOrder.CityTown = order.CityTown;
                 newOrder.StreetAddress = order.StreetAddress;
+                newOrder.Description = order.Description;
 
                 var context = new ValidationContext(newOrder, null, null);
                 var result = new List<ValidationResult>();
@@ -107,6 +110,7 @@ namespace WarehouseSystem.Service
                 toModify.PostalCode = order.PostalCode;
                 toModify.CityTown = order.CityTown;
                 toModify.StreetAddress = order.StreetAddress;
+                toModify.Description = order.Description;
 
                 var context = new ValidationContext(toModify, null, null);
                 var result = new List<ValidationResult>();

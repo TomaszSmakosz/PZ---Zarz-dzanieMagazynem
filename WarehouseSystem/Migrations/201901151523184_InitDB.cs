@@ -118,6 +118,7 @@ namespace ArmyBase.Migrations
                         CityTown = c.String(nullable: false),
                         PostalCode = c.String(nullable: false),
                         StreetAddress = c.String(nullable: false),
+                        Description = c.String(nullable: false),
                         IsDisabled = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

@@ -74,10 +74,10 @@ namespace WarehouseSystem.Models.Initializer
                 db.Inventory.Add(item);
 
             IList<Order> Orders = new List<Order>();
-            Orders.Add(new Order() { Id = 1, OrderItem = "Test", ItemQuantity = 1, RecipientCompany = "Test", CityTown = "Test", PostalCode = "13-011", StreetAddress = "Test" });
-            Orders.Add(new Order() { Id = 2, OrderItem = "Test2", ItemQuantity = 23, RecipientCompany = "Test2", CityTown = "Test2", PostalCode = "13-101", StreetAddress = "Test2" });
-            Orders.Add(new Order() { Id = 3, OrderItem = "Test3", ItemQuantity = 2, RecipientCompany = "Test3", CityTown = "Test3", PostalCode = "13-031", StreetAddress = "Test3" });
-            Orders.Add(new Order() { Id = 4, OrderItem = "Test4", ItemQuantity = 15, RecipientCompany = "Test4", CityTown = "Test4", PostalCode = "13-001", StreetAddress = "Test4" });
+            Orders.Add(new Order() { Id = 1, OrderItem = "Test", ItemQuantity = 1, RecipientCompany = "Test", CityTown = "Test", PostalCode = "13-011", StreetAddress = "Test", Description = "Test" });
+            Orders.Add(new Order() { Id = 2, OrderItem = "Test2", ItemQuantity = 23, RecipientCompany = "Test2", CityTown = "Test2", PostalCode = "13-101", StreetAddress = "Test2", Description = "Test2" });
+            Orders.Add(new Order() { Id = 3, OrderItem = "Test3", ItemQuantity = 2, RecipientCompany = "Test3", CityTown = "Test3", PostalCode = "13-031", StreetAddress = "Test3", Description = "Test3" });
+            Orders.Add(new Order() { Id = 4, OrderItem = "Test4", ItemQuantity = 15, RecipientCompany = "Test4", CityTown = "Test4", PostalCode = "13-001", StreetAddress = "Test4", Description = "Test4" });
 
             foreach (var item in Orders)
                 db.Orders.Add(item);
