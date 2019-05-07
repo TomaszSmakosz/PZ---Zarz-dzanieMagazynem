@@ -26,7 +26,7 @@
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="View Details" />
+                                <Button Content="View Details" x:Name="LoadDetailsPage" cal:Message.Attach="LoadDetailsPage($this)" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

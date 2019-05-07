@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Caliburn.Micro;
 using WarehouseSystem.DTO;
 using WarehouseSystem.Service;
-using WarehouseSystem.ViewModels.Event;
 
 namespace WarehouseSystem.ViewModels.EventReadOnly
 {
@@ -28,6 +27,14 @@ namespace WarehouseSystem.ViewModels.EventReadOnly
         {
             EventsReadOnly = EventService.GetAll();
             NotifyOfPropertyChange(() => EventsReadOnly);
+        }
+
+        public void LoadDetailsPage(EventDTO customEvent)
+        {
+            IWindowManager manager = new WindowManager();
+            EventReadOnlyWindowViewModel details = new EventReadOnlyWindowViewModel(customEvent);
+            manager.ShowDialog(details, null, null);
+            Reload();
         }
     }
 }
