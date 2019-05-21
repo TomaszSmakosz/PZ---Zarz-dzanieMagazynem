@@ -195,6 +195,9 @@
     <Compile Include="Views\Inventory\InventoryGridView.xaml.cs">
       <DependentUpon>InventoryGridView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LogInView.xaml.cs">
+      <DependentUpon>LogInView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Order\OrderGridView.xaml.cs">
       <DependentUpon>OrderGridView.xaml</DependentUpon>
     </Compile>
@@ -276,6 +279,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Inventory\InventoryGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LogInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
