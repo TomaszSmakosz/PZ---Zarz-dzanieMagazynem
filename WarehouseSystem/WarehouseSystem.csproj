@@ -162,6 +162,7 @@
     <Compile Include="ViewModels\Client\ClientGridViewModel.cs" />
     <Compile Include="ViewModels\Delivery\DeliveryGridViewModel.cs" />
     <Compile Include="ViewModels\StartUpViewModel.cs" />
+    <Compile Include="ViewModels\User\LogInViewModel.cs" />
     <Compile Include="ViewModels\User\UserGridViewModel.cs" />
     <Compile Include="Views\DBInitializationView.xaml.cs">
       <DependentUpon>DBInitializationView.xaml</DependentUpon>
@@ -199,7 +200,7 @@
     <Compile Include="Views\Inventory\InventoryGridView.xaml.cs">
       <DependentUpon>InventoryGridView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LogInView.xaml.cs">
+    <Compile Include="Views\User\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Order\OrderGridView.xaml.cs">
@@ -290,7 +291,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\LogInView.xaml">
+    <Page Include="Views\User\LogInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

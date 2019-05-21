@@ -89,5 +89,10 @@ namespace WarehouseSystem.ViewModels
         {
             ActiveItem = new EventReadOnlyGridViewModel();
         }
+
+        public void LoadLogInPage()
+        {
+            ActiveItem = new LogInViewModel();
+        }
     }
 }

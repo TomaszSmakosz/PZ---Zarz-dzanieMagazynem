@@ -12,12 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WarehouseSystem.Views
+namespace WarehouseSystem.Views.User
 {
     /// <summary>
     /// Logika interakcji dla klasy LogInView.xaml
     /// </summary>
-    public partial class LogInView : Window
+    public partial class LogInView : UserControl
     {
         public LogInView()
         {
