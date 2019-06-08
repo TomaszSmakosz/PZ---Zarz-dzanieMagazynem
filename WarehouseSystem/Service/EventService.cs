@@ -24,6 +24,7 @@ namespace WarehouseSystem.Service
                                        Description = x.Description,
                                        Executed = x.Executed,
                                        UserId = x.UserId,
+                                       OrderId = x.OrderId,
                                    }).ToList();
                 return result;
             }
@@ -50,6 +51,7 @@ namespace WarehouseSystem.Service
                                         Description = x.Description,
                                         Executed = x.Executed,
                                         UserId = x.UserId,
+                                        OrderId = x.OrderId,
                                     }).FirstOrDefault();
 
                 return result;
@@ -72,6 +74,8 @@ namespace WarehouseSystem.Service
                 newEvent.Executed = eventDTO.Executed;
 
                 newEvent.UserId = eventDTO.UserId;
+
+                newEvent.OrderId = eventDTO.OrderId;
 
                 var context = new ValidationContext(newEvent, null, null);
 
@@ -106,6 +110,7 @@ namespace WarehouseSystem.Service
                 toModify.Description = eventDTO.Description;
                 toModify.Executed = eventDTO.Executed;
                 toModify.UserId = eventDTO.UserId;
+                toModify.OrderId = eventDTO.OrderId;
 
                 var context = new ValidationContext(toModify, null, null);
                 var result = new List<ValidationResult>();

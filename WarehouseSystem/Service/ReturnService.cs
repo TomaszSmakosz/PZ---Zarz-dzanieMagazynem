@@ -23,7 +23,6 @@ namespace WarehouseSystem.Service
                                        Client = x.Client,
                                        Date = x.Date,
                                        Description = x.Description,
-                                       Attachment = x.Attachment,
                                    }).ToList();
                 return result;
             }
@@ -49,7 +48,6 @@ namespace WarehouseSystem.Service
                                         Client = x.Client,
                                         Date = x.Date,
                                         Description = x.Description,
-                                        Attachment = x.Attachment,
                                     }).FirstOrDefault();
 
                 return result;
@@ -66,7 +64,6 @@ namespace WarehouseSystem.Service
                 newReturn.Client = returnVar.Client;
                 newReturn.Date = returnVar.Date;
                 newReturn.Description = returnVar.Description;
-                newReturn.Attachment = returnVar.Attachment;
 
                 var context = new ValidationContext(newReturn, null, null);
                 var result = new List<ValidationResult>();
@@ -98,7 +95,6 @@ namespace WarehouseSystem.Service
                 toModify.Client = returnVar.Client;
                 toModify.Date = returnVar.Date;
                 toModify.Description = returnVar.Description;
-                toModify.Attachment = returnVar.Attachment;
 
                 var context = new ValidationContext(toModify, null, null);
                 var result = new List<ValidationResult>();

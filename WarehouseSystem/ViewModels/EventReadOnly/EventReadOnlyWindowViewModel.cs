@@ -15,7 +15,7 @@ namespace WarehouseSystem.ViewModels
         public string Description { get; set; }
         public string UserName { get; set; }
         public bool Executed { get; set; }
-
+        public OrderDTO customOrder { get; set; }
         public EventReadOnlyWindowViewModel(EventDTO customEvent)
         {
             Name = customEvent.Name;
@@ -23,7 +23,7 @@ namespace WarehouseSystem.ViewModels
             Executed = customEvent.Executed;
             UserDTO user = UserService.GetById(customEvent.UserId);
             UserName = user.FirstName + " " + user.LastName;
-
+            customOrder = OrderService.GetById(customEvent.OrderId);
             NotifyOfPropertyChange(() => Name);
             NotifyOfPropertyChange(() => Description);
             NotifyOfPropertyChange(() => UserName);
@@ -34,6 +34,12 @@ namespace WarehouseSystem.ViewModels
         {
         }
 
+        public void OpenAttachment()
+        {
+            IWindowManager manager = new WindowManager();
+            OrderReadOnlyWindowViewModel attachment = new OrderReadOnlyWindowViewModel(customOrder);
+            manager.ShowDialog(attachment, null, null);
+        }
         public void Close()
         {
             TryClose();

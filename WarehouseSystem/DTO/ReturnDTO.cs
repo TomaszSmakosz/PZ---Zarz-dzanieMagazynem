@@ -12,8 +12,6 @@ namespace WarehouseSystem.DTO
         public string Client { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
-        public string Attachment { get; set; }
-
         public bool IsDisabled { get; set; }
     }
 }

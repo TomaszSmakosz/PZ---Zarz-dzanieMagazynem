@@ -23,6 +23,20 @@ namespace WarehouseSystem.ViewModels.EventReadOnly
             base.OnViewLoaded(view);
         }
 
+        public void AbortExecution(EventDTO customEvent)
+        {
+            customEvent.Executed = false;
+            EventService.Edit(customEvent);
+            Reload();
+        }
+
+        public void Execute(EventDTO customEvent)
+        {
+            customEvent.Executed = true;
+            EventService.Edit(customEvent);
+            Reload();
+        }
+
         public void Reload()
         {
             EventsReadOnly = EventService.GetAll();

@@ -31,7 +31,6 @@ namespace WarehouseSystem.ViewModels
             DateOfAddition = ret.Date;
             Client = ret.Client;
             Description = ret.Description;
-            Attachment = ret.Attachment;
             NotifyOfPropertyChange(() => DateOfAddition);
             NotifyOfPropertyChange(() => Client);
             NotifyOfPropertyChange(() => Description);
@@ -51,7 +50,6 @@ namespace WarehouseSystem.ViewModels
                 toEdit.Date = DateOfAddition;
                 toEdit.Client = Client;
                 toEdit.Description = Description;
-                toEdit.Attachment = Attachment;
                 ReturnService.Edit(toEdit);
             }
             else
@@ -60,7 +58,6 @@ namespace WarehouseSystem.ViewModels
                 newReturn.Date = DateOfAddition;
                 newReturn.Client = Client;
                 newReturn.Description = Description;
-                newReturn.Attachment = Attachment;
                 ReturnService.Add(newReturn);
             }
             Close();

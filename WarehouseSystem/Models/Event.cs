@@ -25,6 +25,9 @@ namespace WarehouseSystem.Models
         [Required(ErrorMessage = ("User ID is required."))]
         public int UserId { get; set; }
 
+        [Required(ErrorMessage = ("User ID is required."))]
+        public int OrderId { get; set; }
+
         public bool IsDisabled { get; set; }
     }
 }

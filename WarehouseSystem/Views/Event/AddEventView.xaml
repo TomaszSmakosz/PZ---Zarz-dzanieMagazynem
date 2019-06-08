@@ -24,6 +24,7 @@
         <Label Grid.Column="0" Grid.Row="1" Padding="2"  FontSize="12" Margin="5">Description</Label>
         <Label Grid.Column="0" Grid.Row="2" Padding="2"  FontSize="12" Margin="5">Executed</Label>
         <Label Grid.Column="0" Grid.Row="3" Padding="2"  FontSize="12" Margin="5" >User</Label>
+        <Label Grid.Column="0" Grid.Row="4" Padding="2"  FontSize="12" Margin="5" >Attached Order</Label>
 
         <TextBox Grid.Column="1" Grid.Row="0" x:Name="Name" Margin="5" />
         <TextBox Grid.Column="1" Grid.Row="1" x:Name="Description" Margin="5" />
@@ -37,6 +38,20 @@
                             <MultiBinding StringFormat="{}{0} {1}">
                                 <Binding Path="FirstName"/>
                                 <Binding Path="LastName"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="1" Grid.Row="4" Margin="5" x:Name="Orders" IsSynchronizedWithCurrentItem="True">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="OrderItem"/>
+                                <Binding Path="RecipientCompany"/>
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>

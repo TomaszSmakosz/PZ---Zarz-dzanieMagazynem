@@ -87,7 +87,8 @@ namespace ArmyBase.Migrations
                         Description = c.String(),
                         Executed = c.Boolean(nullable: false),
                         UserId = c.Int(nullable: false),
-                        IsDisabled = c.Boolean(nullable: false),
+                        OrderId = c.Int(nullable: false),
+                    IsDisabled = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -131,7 +132,6 @@ namespace ArmyBase.Migrations
                         Client = c.String(nullable: false),
                         Date = c.DateTime(nullable: false),
                         Description = c.String(nullable: false),
-                        Attachment = c.String(),
                         IsDisabled = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
