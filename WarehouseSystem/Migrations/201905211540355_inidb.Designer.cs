@@ -7,13 +7,13 @@ namespace ArmyBase.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitDB : IMigrationMetadata
+    public sealed partial class inidb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(inidb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201901151523184_InitDB"; }
+            get { return "201905211540355_inidb"; }
         }
         
         string IMigrationMetadata.Source
