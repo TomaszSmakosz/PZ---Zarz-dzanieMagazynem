@@ -39,7 +39,7 @@ namespace WarehouseSystem.ViewModels.EventReadOnly
 
         public void Reload()
         {
-            EventsReadOnly = EventService.GetAll();
+            EventsReadOnly = EventService.GetNotExecuted();
             NotifyOfPropertyChange(() => EventsReadOnly);
         }
 

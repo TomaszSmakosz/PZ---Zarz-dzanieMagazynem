@@ -30,6 +30,24 @@ namespace WarehouseSystem.Service
             }
         }
 
+        public static List<EventDTO> GetNotExecuted()
+        {
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
+            {
+                var result = db.Events.Where(x => x.IsDisabled == false && x.Executed==false).Select(
+                                   x => new EventDTO
+                                   {
+                                       Id = x.Id,
+                                       Name = x.Name,
+                                       Description = x.Description,
+                                       Executed = x.Executed,
+                                       UserId = x.UserId,
+                                       OrderId = x.OrderId,
+                                   }).ToList();
+                return result;
+            }
+        }
+
         public static BindableCollection<EventDTO> GetAllBindableCollection()
         {
             using (WarehouseSystemContext db = new WarehouseSystemContext())
