@@ -22,8 +22,7 @@ namespace WarehouseSystem.Models
         [Required(ErrorMessage = ("Executed state is required."))]
         public bool Executed { get; set; }
 
-        [Required(ErrorMessage = ("User ID is required."))]
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         [Required(ErrorMessage = ("User ID is required."))]
         public int OrderId { get; set; }

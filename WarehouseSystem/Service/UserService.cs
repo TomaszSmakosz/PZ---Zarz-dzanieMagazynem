@@ -25,6 +25,8 @@ namespace WarehouseSystem.Service
                                        Email = x.Email,
                                        PhoneNumber = x.PhoneNumber,
                                        BirthDate = x.BirthDate,
+                                       UserName = x.UserName,
+                                       Password = x.Password,
                                    }).ToList();
                 return result;
             }
@@ -39,18 +41,42 @@ namespace WarehouseSystem.Service
             }
         }
 
-        public static UserDTO GetById(int id)
+        public static UserDTO GetById(int? id)
         {
             using (WarehouseSystemContext db = new WarehouseSystemContext())
             {
                 var result = db.Users.Where(x => x.Id == id).Select(
                                     x => new UserDTO
                                     {
+                                        Id = x.Id,
                                         FirstName = x.FirstName,
                                         LastName = x.LastName,
                                         Email = x.Email,
                                         PhoneNumber = x.PhoneNumber,
                                         BirthDate = x.BirthDate,
+                                        UserName = x.UserName,
+                                        Password = x.Password,
+                                    }).FirstOrDefault();
+
+                return result;
+            }
+        }
+
+        public static UserDTO GetByUserName(string username, string password)
+        {
+            using (WarehouseSystemContext db = new WarehouseSystemContext())
+            {
+                var result = db.Users.Where(x => x.UserName == username && x.Password == password).Select(
+                                    x => new UserDTO
+                                    {
+                                        Id = x.Id,
+                                        FirstName = x.FirstName,
+                                        LastName = x.LastName,
+                                        Email = x.Email,
+                                        PhoneNumber = x.PhoneNumber,
+                                        BirthDate = x.BirthDate,
+                                        UserName = x.UserName,
+                                        Password = x.Password,
                                     }).FirstOrDefault();
 
                 return result;
@@ -69,6 +95,8 @@ namespace WarehouseSystem.Service
                 newUser.Email = user.Email;
                 newUser.PhoneNumber = user.PhoneNumber;
                 newUser.BirthDate = user.BirthDate;
+                newUser.UserName = user.UserName;
+                newUser.Password = user.Password;
 
                 var context = new ValidationContext(newUser, null, null);
                 var result = new List<ValidationResult>();
@@ -102,6 +130,8 @@ namespace WarehouseSystem.Service
                 toModify.Email = user.Email;
                 toModify.PhoneNumber = user.PhoneNumber;
                 toModify.BirthDate = user.BirthDate;
+                toModify.UserName = user.UserName;
+                toModify.Password = user.Password;
 
                 var context = new ValidationContext(toModify, null, null);
                 var result = new List<ValidationResult>();

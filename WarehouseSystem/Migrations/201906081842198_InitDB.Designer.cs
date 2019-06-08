@@ -13,7 +13,7 @@ namespace ArmyBase.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201905211504290_InitDB"; }
+            get { return "201906081842198_InitDB"; }
         }
         
         string IMigrationMetadata.Source

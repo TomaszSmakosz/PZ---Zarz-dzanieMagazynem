@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,8 @@ namespace WarehouseSystem.ViewModels
         private bool IsEdit { get; set; }
         public string ButtonLabel { get; set; }
         private EventDTO toEdit { get; set; }
-        public BindableCollection<UserDTO> Users
+
+        public ObservableCollection<UserDTO> Users
         {
             get
             {
@@ -32,17 +34,23 @@ namespace WarehouseSystem.ViewModels
                 return new BindableCollection<OrderDTO>(OrderService.GetAll());
             }
         }
+
         private OrderDTO _selectedOrder;
         private UserDTO _selectedUser;
+
         public UserDTO SelectedUser
         {
             get { return _selectedUser; }
             set
             {
-                _selectedUser = value;
-                NotifyOfPropertyChange(() => SelectedUser);
+                if (value != null)
+                {
+                    _selectedUser = value;
+                    NotifyOfPropertyChange(() => SelectedUser);
+                }
             }
         }
+
         public OrderDTO SelectedOrder
         {
             get { return _selectedOrder; }
@@ -52,6 +60,7 @@ namespace WarehouseSystem.ViewModels
                 NotifyOfPropertyChange(() => SelectedOrder);
             }
         }
+
         public AddEventViewModel(EventDTO customEvent)
         {
             IsEdit = true;
@@ -60,8 +69,10 @@ namespace WarehouseSystem.ViewModels
             Name = customEvent.Name;
             Description = customEvent.Description;
             Executed = customEvent.Executed;
-            SelectedUser = UserService.GetById(customEvent.UserId);
-            SelectedUser.Id = customEvent.UserId;
+            if (customEvent.UserId != null)
+            {
+                SelectedUser = UserService.GetById(customEvent.UserId);
+            }
 
             SelectedOrder = OrderService.GetById(customEvent.OrderId);
             SelectedOrder.Id = customEvent.OrderId;
@@ -86,7 +97,10 @@ namespace WarehouseSystem.ViewModels
             {
                 toEdit.Name = Name;
                 toEdit.Description = Description;
-                toEdit.UserId = SelectedUser.Id;
+                if (SelectedUser != null)
+                {
+                    toEdit.UserId = SelectedUser.Id;
+                }
                 toEdit.OrderId = SelectedOrder.Id;
                 toEdit.Executed = Executed;
                 EventService.Edit(toEdit);
@@ -96,8 +110,11 @@ namespace WarehouseSystem.ViewModels
                 var newEvent = new EventDTO();
                 newEvent.Name = Name;
                 newEvent.Description = Description;
-                newEvent.UserId = SelectedUser.Id;
-                toEdit.OrderId = SelectedOrder.Id;
+                if (SelectedUser != null)
+                {
+                    newEvent.UserId = SelectedUser.Id;
+                }
+                newEvent.OrderId = SelectedOrder.Id;
                 newEvent.Executed = Executed;
                 EventService.Add(newEvent);
             }

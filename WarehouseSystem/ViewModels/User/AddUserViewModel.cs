@@ -19,6 +19,8 @@ namespace WarehouseSystem.ViewModels
         public string LastName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
         public DateTime BirthDate { get; set; } = DateTime.Now;
 
         public string ButtonLabel { get; set; }
@@ -34,12 +36,16 @@ namespace WarehouseSystem.ViewModels
             Email = user.Email;
             PhoneNumber = user.PhoneNumber;
             BirthDate = user.BirthDate;
+            UserName = user.UserName;
+            Password = user.Password;
 
             NotifyOfPropertyChange(() => FirstName);
             NotifyOfPropertyChange(() => LastName);
             NotifyOfPropertyChange(() => Email);
             NotifyOfPropertyChange(() => PhoneNumber);
             NotifyOfPropertyChange(() => BirthDate);
+            NotifyOfPropertyChange(() => UserName);
+            NotifyOfPropertyChange(() => Password);
         }
 
         public AddUserViewModel()
@@ -57,6 +63,8 @@ namespace WarehouseSystem.ViewModels
                 toEdit.PhoneNumber = PhoneNumber;
                 toEdit.Email = Email;
                 toEdit.BirthDate = BirthDate;
+                toEdit.UserName = UserName;
+                toEdit.Password = Password;
                 UserService.Edit(toEdit);
             }
             else
@@ -67,6 +75,8 @@ namespace WarehouseSystem.ViewModels
                 newUser.PhoneNumber = PhoneNumber;
                 newUser.Email = Email;
                 newUser.BirthDate = BirthDate;
+                newUser.UserName = UserName;
+                newUser.Password = Password;
                 UserService.Add(newUser);
             }
             TryClose();

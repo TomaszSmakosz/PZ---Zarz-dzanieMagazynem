@@ -24,18 +24,19 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="0" Grid.Row="0" Margin="5">
-            <Button x:Name="LoadClientPage" Margin="5">Clients</Button>
-            <Button x:Name="LoadDeliveryPage" Margin="5">Deliveries</Button>
-            <Button x:Name="LoadEmployeePage" Margin="5">Employees</Button>
-            <Button x:Name="LoadEquipmentPage" Margin="5">Equipment</Button>
-            <Button x:Name="LoadInventoryPage" Margin="5">Inventories</Button>
-            <Button x:Name="LoadOrderPage" Margin="5">Orders</Button>
-            <Button x:Name="LoadReturnPage" Margin="5">Returns</Button>
-            <Button x:Name="LoadShipmentPage" Margin="5">Shipments</Button>
-            <Button x:Name="LoadUserPage" Margin="5">Users</Button>
-            <Button x:Name="LoadEventPage" Margin="5">Events</Button>
-            <Button x:Name="LoadEventReadOnlyPage" Margin="5">Events (Read-Only)</Button>
-            <Button x:Name="LoadLogInPage" Margin="5">Log In</Button>
+            <Label Margin="5" x:Name="LoggedUserName" HorizontalAlignment="Center" />
+            <Button x:Name="LoadClientPage" Margin="5" Visibility="{Binding IsAdmin}">Clients</Button>
+            <Button x:Name="LoadDeliveryPage" Margin="5" Visibility="{Binding IsAdmin}">Deliveries</Button>
+            <Button x:Name="LoadEmployeePage" Margin="5" Visibility="{Binding IsAdmin}">Employees</Button>
+            <Button x:Name="LoadEquipmentPage" Margin="5" Visibility="{Binding IsAdmin}">Equipment</Button>
+            <Button x:Name="LoadInventoryPage" Margin="5" Visibility="{Binding IsAdmin}">Inventories</Button>
+            <Button x:Name="LoadOrderPage" Margin="5" Visibility="{Binding IsAdmin}">Orders</Button>
+            <Button x:Name="LoadReturnPage" Margin="5" Visibility="{Binding IsAdmin}">Returns</Button>
+            <Button x:Name="LoadShipmentPage" Margin="5" Visibility="{Binding IsAdmin}">Shipments</Button>
+            <Button x:Name="LoadUserPage" Margin="5" Visibility="{Binding IsAdmin}">Users</Button>
+            <Button x:Name="LoadEventPage" Margin="5" Visibility="{Binding IsAdmin}">Events</Button>
+            <Button x:Name="LoadEventReadOnlyPage" Margin="5" Visibility="{Binding EventScreenVisibility}">Events (Read-Only)</Button>
+            <Button x:Name="LoadLogInPage" Margin="5" Content="{Binding LogInOut}"></Button>
         </StackPanel>
 
         <!-- Row 2 -->

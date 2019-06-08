@@ -47,7 +47,7 @@ namespace WarehouseSystem.Models.Initializer
                 db.Equipments.Add(item);
 
             IList<Event> Events = new List<Event>();
-            Events.Add(new Event() { Id = 1, Name = "Test", Description = "Test", Executed = false, UserId = 1, OrderId=1 });
+            Events.Add(new Event() { Id = 1, Name = "Test", Description = "Test", Executed = false, UserId = 1, OrderId = 1 });
             Events.Add(new Event() { Id = 2, Name = "Test2", Description = "Test2", Executed = false, UserId = 2, OrderId = 2 });
             Events.Add(new Event() { Id = 3, Name = "Test3", Description = "Test3", Executed = false, UserId = 3, OrderId = 3 });
             Events.Add(new Event() { Id = 4, Name = "Test4", Description = "Test4", Executed = false, UserId = 4, OrderId = 4 });
@@ -83,8 +83,8 @@ namespace WarehouseSystem.Models.Initializer
                 db.Orders.Add(item);
 
             IList<Return> Returns = new List<Return>();
-            Returns.Add(new Return() { Id = 1, Client = "Adam Wakulak", Date = new DateTime(2017, 4, 6), Description = "Brak"});
-            Returns.Add(new Return() { Id = 2, Client = "Kamil Stoch", Date = new DateTime(2017, 4, 7), Description = "Brak"});
+            Returns.Add(new Return() { Id = 1, Client = "Adam Wakulak", Date = new DateTime(2017, 4, 6), Description = "Brak" });
+            Returns.Add(new Return() { Id = 2, Client = "Kamil Stoch", Date = new DateTime(2017, 4, 7), Description = "Brak" });
             Returns.Add(new Return() { Id = 3, Client = "Andrzej Duda", Date = new DateTime(2017, 4, 8), Description = "Uszkodzenie szybki" });
             Returns.Add(new Return() { Id = 4, Client = "Andreas Kooler", Date = new DateTime(2017, 4, 9), Description = "Zgniecenie" });
 
@@ -101,10 +101,11 @@ namespace WarehouseSystem.Models.Initializer
                 db.Shipments.Add(item);
 
             IList<User> Users = new List<User>();
-            Users.Add(new User() { Id = 1, FirstName = "Karol", LastName = "Koc", BirthDate = new DateTime(1999, 1, 13), Email = "k.koc@gmail.com", PhoneNumber = "654321123" });
-            Users.Add(new User() { Id = 2, FirstName = "Adam", LastName = "Lewandowski", BirthDate = new DateTime(1999, 2, 13), Email = "a.lewandowski@gmail.com", PhoneNumber = "654311123" });
-            Users.Add(new User() { Id = 3, FirstName = "Jan", LastName = "Nowak", BirthDate = new DateTime(1999, 6, 13), Email = "j.nowak@gmail.com", PhoneNumber = "654331123" });
-            Users.Add(new User() { Id = 4, FirstName = "Andrzej", LastName = "Kowalski", BirthDate = new DateTime(1999, 5, 13), Email = "a.kowalski@gmail.com", PhoneNumber = "654341123" });
+            Users.Add(new User() { Id = 1, FirstName = "Administrator", LastName = "Adminsitrator", BirthDate = new DateTime(1999, 1, 13), Email = "admin@gmail.com", PhoneNumber = "654321123", UserName = "admin", Password = "admin" });
+            Users.Add(new User() { Id = 2, FirstName = "Adam", LastName = "Lewandowski", BirthDate = new DateTime(1999, 2, 13), Email = "a.lewandowski@gmail.com", PhoneNumber = "654311123", UserName = "lewa", Password = "lewa" });
+            Users.Add(new User() { Id = 3, FirstName = "Jan", LastName = "Nowak", BirthDate = new DateTime(1999, 6, 13), Email = "j.nowak@gmail.com", PhoneNumber = "654331123", UserName = "nowj", Password = "nowj" });
+            Users.Add(new User() { Id = 4, FirstName = "Andrzej", LastName = "Kowalski", BirthDate = new DateTime(1999, 5, 13), Email = "a.kowalski@gmail.com", PhoneNumber = "654341123", UserName = "kowa", Password = "kowa" });
+            Users.Add(new User() { Id = 5, FirstName = "Karol", LastName = "Koc", BirthDate = new DateTime(1999, 1, 13), Email = "k.koc@gmail.com", PhoneNumber = "654321123", UserName = "kock", Password = "kock" });
 
             foreach (var item in Users)
                 db.Users.Add(item);

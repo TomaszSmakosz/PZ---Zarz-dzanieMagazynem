@@ -111,13 +111,9 @@
     <Compile Include="DTO\ShipmentDTO.cs" />
     <Compile Include="DTO\EquipmentDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
-    <Compile Include="Migrations\201905211504290_InitDB.cs" />
-    <Compile Include="Migrations\201905211504290_InitDB.Designer.cs">
-      <DependentUpon>201905211504290_InitDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906081714174_New_migration.cs" />
-    <Compile Include="Migrations\201906081714174_New_migration.Designer.cs">
-      <DependentUpon>201906081714174_New_migration.cs</DependentUpon>
+    <Compile Include="Migrations\201906081842198_InitDB.cs" />
+    <Compile Include="Migrations\201906081842198_InitDB.Designer.cs">
+      <DependentUpon>201906081842198_InitDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
@@ -144,6 +140,7 @@
     <Compile Include="Service\ShipmentService.cs" />
     <Compile Include="Service\EquipmentService.cs" />
     <Compile Include="Service\UserService.cs" />
+    <Compile Include="ViewModels\BlankViewModel.cs" />
     <Compile Include="ViewModels\Client\AddClientViewModel.cs" />
     <Compile Include="ViewModels\DBInitializationViewModel.cs" />
     <Compile Include="ViewModels\Delivery\AddDeliveryViewModel.cs" />
@@ -170,6 +167,9 @@
     <Compile Include="ViewModels\StartUpViewModel.cs" />
     <Compile Include="ViewModels\User\LogInViewModel.cs" />
     <Compile Include="ViewModels\User\UserGridViewModel.cs" />
+    <Compile Include="Views\BlankView.xaml.cs">
+      <DependentUpon>BlankView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DBInitializationView.xaml.cs">
       <DependentUpon>DBInitializationView.xaml</DependentUpon>
     </Compile>
@@ -252,6 +252,10 @@
     <Compile Include="Views\User\UserGridView.xaml.cs">
       <DependentUpon>UserGridView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\BlankView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DBInitializationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -371,11 +375,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201905211504290_InitDB.resx">
-      <DependentUpon>201905211504290_InitDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906081714174_New_migration.resx">
-      <DependentUpon>201906081714174_New_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906081842198_InitDB.resx">
+      <DependentUpon>201906081842198_InitDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

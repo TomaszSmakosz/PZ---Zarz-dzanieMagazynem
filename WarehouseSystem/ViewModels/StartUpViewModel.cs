@@ -11,6 +11,7 @@ using WarehouseSystem.ViewModels.Shipment;
 using WarehouseSystem.ViewModels.User;
 using WarehouseSystem.ViewModels.Event;
 using WarehouseSystem.ViewModels.EventReadOnly;
+using System.Windows;
 
 namespace WarehouseSystem.ViewModels
 {
@@ -18,8 +19,13 @@ namespace WarehouseSystem.ViewModels
     {
         private readonly WarehouseSystemContext context = new WarehouseSystemContext();
 
+        public Authentication.Authentication LoggedUser { get; set; }
+
         public StartUpViewModel()
         {
+            LogInOut = "Log in";
+            LoggedUser = Authentication.Authentication.Instance;
+            LoggedUserName = LoggedUser.Username;
         }
 
         protected override void OnViewLoaded(object view)
@@ -28,61 +34,112 @@ namespace WarehouseSystem.ViewModels
             {
                 IWindowManager manager = new WindowManager();
                 DBInitializationViewModel dbInitializingView = new DBInitializationViewModel(context);
-                manager.ShowDialog(dbInitializingView, null, null);
+                bool? result2 = manager.ShowDialog(dbInitializingView, null, null);
             }
 
-            ActiveItem = new EventReadOnlyGridViewModel();
+            IWindowManager manager2 = new WindowManager();
+            LogInViewModel logInView = new LogInViewModel();
+            bool? result = manager2.ShowDialog(logInView, null, null);
+            if (result == true)
+            {
+                ChangeVisibilty();
+                ChangeLogInButtonContent();
+                ActiveItem = new EventReadOnlyGridViewModel();
+            }
+            else
+            {
+                ActiveItem = new BlankViewModel();
+            }
+        }
+
+        public Visibility IsAdmin { get; set; } = Visibility.Collapsed;
+        public Visibility EventScreenVisibility { get; set; } = Visibility.Collapsed;
+
+        public string LogInOut { get; set; }
+        public string LoggedUserName { get; set; }
+
+        public void ChangeVisibilty()
+        {
+            if (LoggedUser.isLogged)
+            {
+                EventScreenVisibility = Visibility.Visible;
+                if (LoggedUser.isAdmin)
+                {
+                    IsAdmin = Visibility.Visible;
+                }
+            }
+            else
+            {
+                EventScreenVisibility = Visibility.Collapsed;
+                IsAdmin = Visibility.Collapsed;
+            }
+            NotifyOfPropertyChange(() => IsAdmin);
+            NotifyOfPropertyChange(() => EventScreenVisibility);
+        }
+
+        public void ChangeLogInButtonContent()
+        {
+            if (LoggedUser.isLogged)
+            {
+                LogInOut = "Log out";
+            }
+            else
+                LogInOut = "Log in";
+
+            LoggedUserName = LoggedUser.Username;
+            NotifyOfPropertyChange(() => LogInOut);
+            NotifyOfPropertyChange(() => LoggedUserName);
         }
 
         //Loading pages methods
         public void LoadClientPage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new ClientGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new ClientGridViewModel();
         }
 
         public void LoadDeliveryPage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new DeliveryGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new DeliveryGridViewModel();
         }
 
         public void LoadEmployeePage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new EmployeeGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new EmployeeGridViewModel();
         }
 
         public void LoadEquipmentPage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new EquipmentGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new EquipmentGridViewModel();
         }
 
         public void LoadInventoryPage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new InventoryGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new InventoryGridViewModel();
         }
 
         public void LoadOrderPage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new OrderGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new OrderGridViewModel();
         }
 
         public void LoadReturnPage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new ReturnGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new ReturnGridViewModel();
         }
 
         public void LoadShipmentPage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new ShipmentGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new ShipmentGridViewModel();
         }
 
         public void LoadUserPage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new UserGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new UserGridViewModel();
         }
 
         public void LoadEventPage()
         {
-            if (Authentication.Authentication.isAdmin) ActiveItem = new EventGridViewModel();
+            if (LoggedUser.isAdmin) ActiveItem = new EventGridViewModel();
         }
 
         public void LoadEventReadOnlyPage()
@@ -92,7 +149,34 @@ namespace WarehouseSystem.ViewModels
 
         public void LoadLogInPage()
         {
-            if (!Authentication.Authentication.isAdmin) ActiveItem = new LogInViewModel();
+            if (!LoggedUser.isLogged)
+            {
+                IWindowManager manager = new WindowManager();
+                LogInViewModel logInView = new LogInViewModel();
+                bool? result = manager.ShowDialog(logInView, null, null);
+                if (result == true)
+                {
+                    ChangeVisibilty();
+                    ChangeLogInButtonContent();
+                }
+            }
+            else
+            {
+                if (LogInViewModel.LogOut())
+                {
+                    ActiveItem = new BlankViewModel();
+                    ChangeVisibilty();
+                    ChangeLogInButtonContent();
+                    IWindowManager manager = new WindowManager();
+                    LogInViewModel logInView = new LogInViewModel();
+                    bool? result = manager.ShowDialog(logInView, null, null);
+                    if (result == true)
+                    {
+                        ChangeVisibilty();
+                        ChangeLogInButtonContent();
+                    }
+                }
+            }
         }
     }
 }

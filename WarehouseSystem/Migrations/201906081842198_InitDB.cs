@@ -86,9 +86,9 @@ namespace ArmyBase.Migrations
                         Name = c.String(nullable: false),
                         Description = c.String(),
                         Executed = c.Boolean(nullable: false),
-                        UserId = c.Int(nullable: false),
+                        UserId = c.Int(),
                         OrderId = c.Int(nullable: false),
-                    IsDisabled = c.Boolean(nullable: false),
+                        IsDisabled = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -163,6 +163,8 @@ namespace ArmyBase.Migrations
                         BirthDate = c.DateTime(nullable: false),
                         Email = c.String(nullable: false),
                         PhoneNumber = c.String(nullable: false),
+                        UserName = c.String(nullable: false),
+                        Password = c.String(nullable: false),
                         IsDisabled = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

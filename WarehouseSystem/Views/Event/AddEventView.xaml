@@ -30,14 +30,14 @@
         <TextBox Grid.Column="1" Grid.Row="1" x:Name="Description" Margin="5" />
         <CheckBox Grid.Column="1" Grid.Row="2" x:Name="Executed" Margin="5"></CheckBox>
         <!--<TextBox Grid.Column="1" Grid.Row="3"  x:Name="UserId" Margin="5" />-->
-        <ComboBox Grid.Column="1" Grid.Row="3" Margin="5" x:Name="Users" IsSynchronizedWithCurrentItem="True">
+        <ComboBox Grid.Column="1" Grid.Row="3" Margin="5" x:Name="Users" SelectedItem="{Binding SelectedUser, Mode=TwoWay, NotifyOnSourceUpdated=True}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
                         <TextBlock.Text>
                             <MultiBinding StringFormat="{}{0} {1}">
-                                <Binding Path="FirstName"/>
-                                <Binding Path="LastName"/>
+                                <Binding Path="FirstName" />
+                                <Binding Path="LastName" />
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>
@@ -50,8 +50,8 @@
                     <TextBlock>
                         <TextBlock.Text>
                             <MultiBinding StringFormat="{}{0} {1}">
-                                <Binding Path="OrderItem"/>
-                                <Binding Path="RecipientCompany"/>
+                                <Binding Path="OrderItem" />
+                                <Binding Path="RecipientCompany" />
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>

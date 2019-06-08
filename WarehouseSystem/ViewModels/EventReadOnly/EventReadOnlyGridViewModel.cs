@@ -23,13 +23,6 @@ namespace WarehouseSystem.ViewModels.EventReadOnly
             base.OnViewLoaded(view);
         }
 
-        public void AbortExecution(EventDTO customEvent)
-        {
-            customEvent.Executed = false;
-            EventService.Edit(customEvent);
-            Reload();
-        }
-
         public void Execute(EventDTO customEvent)
         {
             customEvent.Executed = true;
@@ -37,9 +30,25 @@ namespace WarehouseSystem.ViewModels.EventReadOnly
             Reload();
         }
 
+        public void ClaimEvent(EventDTO customEvent)
+        {
+            customEvent.UserId = Authentication.Authentication.Instance.User.Id;
+            EventService.Edit(customEvent);
+            Reload();
+        }
+
         public void Reload()
         {
             EventsReadOnly = EventService.GetNotExecuted();
+            foreach (var item in EventsReadOnly)
+            {
+                if (!Authentication.Authentication.Instance.isAdmin)
+                    item.IsActive = item.UserId == Authentication.Authentication.Instance.User.Id || item.UserId == null;
+                else
+                {
+                    item.IsActive = true;
+                }
+            }
             NotifyOfPropertyChange(() => EventsReadOnly);
         }
 

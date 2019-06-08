@@ -22,13 +22,41 @@ namespace WarehouseSystem.ViewModels
 
         public void LogIn(string username, string password)
         {
-            if (Username == "admin" && Password == "admin")
+            var loggedUser = UserService.GetByUserName(username, password);
+            if (loggedUser != null)
             {
-                Authentication.Authentication.Username = "admin";
-                Authentication.Authentication.isLogged = true;
-                Authentication.Authentication.isAdmin = true;
-                TryClose();
+                if (loggedUser.UserName == "admin")
+                {
+                    Authentication.Authentication.Instance.Username = loggedUser.FirstName;
+                    Authentication.Authentication.Instance.isLogged = true;
+                    Authentication.Authentication.Instance.isAdmin = true;
+                    TryClose(true);
+                }
+                else if (!string.IsNullOrEmpty(Username))
+                {
+                    Authentication.Authentication.Instance.Username = loggedUser.FirstName + " " + loggedUser.LastName;
+                    Authentication.Authentication.Instance.isLogged = true;
+                    Authentication.Authentication.Instance.isAdmin = false;
+                    TryClose(true);
+                }
+                Authentication.Authentication.Instance.User = loggedUser;
             }
+            else
+            {
+            }
+        }
+
+        public static bool LogOut()
+        {
+            if (Authentication.Authentication.Instance.isLogged)
+            {
+                Authentication.Authentication.Instance.Username = string.Empty;
+                Authentication.Authentication.Instance.isLogged = false;
+                Authentication.Authentication.Instance.isAdmin = false;
+                Authentication.Authentication.Instance.User = null;
+                return true;
+            }
+            return false;
         }
 
         public void Close()
