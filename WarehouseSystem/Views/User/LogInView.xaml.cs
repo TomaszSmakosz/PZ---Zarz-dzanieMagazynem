@@ -21,7 +21,6 @@ namespace WarehouseSystem.Views.User
     {
         public LogInView()
         {
-            InitializeComponent();
         }
     }
 }

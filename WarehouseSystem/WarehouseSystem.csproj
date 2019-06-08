@@ -98,6 +98,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Authentication\Authentication.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="DTO\ClientDTO.cs" />
     <Compile Include="DTO\DeliveryDTO.cs" />
@@ -110,9 +111,9 @@
     <Compile Include="DTO\ShipmentDTO.cs" />
     <Compile Include="DTO\EquipmentDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
-    <Compile Include="Migrations\201901151523184_InitDB.cs" />
-    <Compile Include="Migrations\201901151523184_InitDB.Designer.cs">
-      <DependentUpon>201901151523184_InitDB.cs</DependentUpon>
+    <Compile Include="Migrations\201905211504290_InitDB.cs" />
+    <Compile Include="Migrations\201905211504290_InitDB.Designer.cs">
+      <DependentUpon>201905211504290_InitDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201906081714174_New_migration.cs" />
     <Compile Include="Migrations\201906081714174_New_migration.Designer.cs">
@@ -370,8 +371,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201901151523184_InitDB.resx">
-      <DependentUpon>201901151523184_InitDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905211504290_InitDB.resx">
+      <DependentUpon>201905211504290_InitDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906081714174_New_migration.resx">
       <DependentUpon>201906081714174_New_migration.cs</DependentUpon>
