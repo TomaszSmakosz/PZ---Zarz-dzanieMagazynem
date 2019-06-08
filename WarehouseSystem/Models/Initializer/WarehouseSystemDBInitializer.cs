@@ -47,10 +47,10 @@ namespace WarehouseSystem.Models.Initializer
                 db.Equipments.Add(item);
 
             IList<Event> Events = new List<Event>();
-            Events.Add(new Event() { Id = 1, Name = "Test", Description = "Test", Executed = false, UserId = 1 });
-            Events.Add(new Event() { Id = 2, Name = "Test2", Description = "Test2", Executed = false, UserId = 2 });
-            Events.Add(new Event() { Id = 3, Name = "Test3", Description = "Test3", Executed = false, UserId = 3 });
-            Events.Add(new Event() { Id = 4, Name = "Test4", Description = "Test4", Executed = false, UserId = 4 });
+            Events.Add(new Event() { Id = 1, Name = "Test", Description = "Test", Executed = false, UserId = 1, OrderId=1 });
+            Events.Add(new Event() { Id = 2, Name = "Test2", Description = "Test2", Executed = false, UserId = 2, OrderId = 2 });
+            Events.Add(new Event() { Id = 3, Name = "Test3", Description = "Test3", Executed = false, UserId = 3, OrderId = 3 });
+            Events.Add(new Event() { Id = 4, Name = "Test4", Description = "Test4", Executed = false, UserId = 4, OrderId = 4 });
 
             foreach (var item in Events)
                 db.Events.Add(item);
@@ -83,10 +83,10 @@ namespace WarehouseSystem.Models.Initializer
                 db.Orders.Add(item);
 
             IList<Return> Returns = new List<Return>();
-            Returns.Add(new Return() { Id = 1, Client = "Adam Wakulak", Date = new DateTime(2017, 4, 6), Description = "Brak", Attachment = "Test" });
-            Returns.Add(new Return() { Id = 2, Client = "Kamil Stoch", Date = new DateTime(2017, 4, 7), Description = "Brak", Attachment = "Test2" });
-            Returns.Add(new Return() { Id = 3, Client = "Andrzej Duda", Date = new DateTime(2017, 4, 8), Description = "Uszkodzenie szybki", Attachment = "Test3" });
-            Returns.Add(new Return() { Id = 4, Client = "Andreas Kooler", Date = new DateTime(2017, 4, 9), Description = "Zgniecenie", Attachment = "Test4" });
+            Returns.Add(new Return() { Id = 1, Client = "Adam Wakulak", Date = new DateTime(2017, 4, 6), Description = "Brak"});
+            Returns.Add(new Return() { Id = 2, Client = "Kamil Stoch", Date = new DateTime(2017, 4, 7), Description = "Brak"});
+            Returns.Add(new Return() { Id = 3, Client = "Andrzej Duda", Date = new DateTime(2017, 4, 8), Description = "Uszkodzenie szybki" });
+            Returns.Add(new Return() { Id = 4, Client = "Andreas Kooler", Date = new DateTime(2017, 4, 9), Description = "Zgniecenie" });
 
             foreach (var item in Returns)
                 db.Returns.Add(item);
