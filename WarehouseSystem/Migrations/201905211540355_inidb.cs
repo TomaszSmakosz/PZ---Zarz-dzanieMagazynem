@@ -3,7 +3,7 @@ namespace ArmyBase.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitDB : DbMigration
+    public partial class inidb : DbMigration
     {
         public override void Up()
         {
