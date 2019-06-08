@@ -98,6 +98,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Authentication\Authentication.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="DTO\ClientDTO.cs" />
     <Compile Include="DTO\DeliveryDTO.cs" />
