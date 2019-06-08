@@ -31,58 +31,58 @@ namespace WarehouseSystem.ViewModels
                 manager.ShowDialog(dbInitializingView, null, null);
             }
 
-            ActiveItem = new ClientGridViewModel();
+            ActiveItem = new EventReadOnlyGridViewModel();
         }
 
         //Loading pages methods
         public void LoadClientPage()
         {
-            ActiveItem = new ClientGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new ClientGridViewModel();
         }
 
         public void LoadDeliveryPage()
         {
-            ActiveItem = new DeliveryGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new DeliveryGridViewModel();
         }
 
         public void LoadEmployeePage()
         {
-            ActiveItem = new EmployeeGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new EmployeeGridViewModel();
         }
 
         public void LoadEquipmentPage()
         {
-            ActiveItem = new EquipmentGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new EquipmentGridViewModel();
         }
 
         public void LoadInventoryPage()
         {
-            ActiveItem = new InventoryGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new InventoryGridViewModel();
         }
 
         public void LoadOrderPage()
         {
-            ActiveItem = new OrderGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new OrderGridViewModel();
         }
 
         public void LoadReturnPage()
         {
-            ActiveItem = new ReturnGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new ReturnGridViewModel();
         }
 
         public void LoadShipmentPage()
         {
-            ActiveItem = new ShipmentGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new ShipmentGridViewModel();
         }
 
         public void LoadUserPage()
         {
-            ActiveItem = new UserGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new UserGridViewModel();
         }
 
         public void LoadEventPage()
         {
-            ActiveItem = new EventGridViewModel();
+            if (Authentication.Authentication.isAdmin) ActiveItem = new EventGridViewModel();
         }
 
         public void LoadEventReadOnlyPage()
@@ -92,7 +92,7 @@ namespace WarehouseSystem.ViewModels
 
         public void LoadLogInPage()
         {
-            ActiveItem = new LogInViewModel();
+            if (!Authentication.Authentication.isAdmin) ActiveItem = new LogInViewModel();
         }
     }
 }
